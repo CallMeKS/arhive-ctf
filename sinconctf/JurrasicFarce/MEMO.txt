@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:153452cbdcb5493161104289d6308a6d815a66ef0808c023cbbb0e0ab3c10e05
-size 200
+Dave, 
+
+	I know you are new here but this is just a reminder that the internal site on port 9090 needs to stay local!! 
+	
+	STOP PLAYING AROUND WITH IT! 
+	
+	https://www.youtube.com/watch?v=RfiQYRn7fBg

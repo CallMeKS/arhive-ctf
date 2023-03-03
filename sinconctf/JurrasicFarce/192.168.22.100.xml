@@ -1,3 +1,73 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:00e692a6595511bd6a7d64f263450d0cabdbdb5c3284fb1cf30f8cc6461b9825
-size 5639
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.93 scan initiated Wed Jan  4 15:40:30 2023 as: nmap -vvv -p 21,22,80 -A -oA 192.168.22.100 192.168.22.100 -->
+<nmaprun scanner="nmap" args="nmap -vvv -p 21,22,80 -A -oA 192.168.22.100 192.168.22.100" start="1672818030" startstr="Wed Jan  4 15:40:30 2023" version="7.93" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="3" services="21-22,80"/>
+<verbose level="3"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1672818031"/>
+<taskend task="NSE" time="1672818031"/>
+<taskbegin task="NSE" time="1672818031"/>
+<taskend task="NSE" time="1672818031"/>
+<taskbegin task="NSE" time="1672818031"/>
+<taskend task="NSE" time="1672818031"/>
+<taskbegin task="Ping Scan" time="1672818031"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="192.168.22.100" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1672818031" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1672818031"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1672818044"/>
+<taskbegin task="Connect Scan" time="1672818044"/>
+<taskend task="Connect Scan" time="1672818044" extrainfo="3 total ports"/>
+<taskbegin task="Service scan" time="1672818044"/>
+<taskend task="Service scan" time="1672818055" extrainfo="3 services on 1 host"/>
+<taskbegin task="NSE" time="1672818055"/>
+<taskend task="NSE" time="1672818085"/>
+<taskbegin task="NSE" time="1672818085"/>
+<taskend task="NSE" time="1672818086"/>
+<taskbegin task="NSE" time="1672818086"/>
+<taskend task="NSE" time="1672818086"/>
+<host starttime="1672818044" endtime="1672818086"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="192.168.22.100" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ftp" product="vsftpd" version="2.0.8 or later" method="probed" conf="10"><cpe>cpe:/a:vsftpd:vsftpd</cpe></service><script id="ftp-anon" output="Anonymous FTP login allowed (FTP code 230)&#xa;Can&apos;t get directory listing: TIMEOUT"/><script id="ftp-syst" output="&#xa;  STAT: &#xa;FTP server status:&#xa;     Connected to ::ffff:192.168.22.2&#xa;     Logged in as ftp&#xa;     TYPE: ASCII&#xa;     No session bandwidth limit&#xa;     Session timeout in seconds is 300&#xa;     Control connection is plain text&#xa;     Data connections will be plain text&#xa;     At session startup, client count was 2&#xa;     vsFTPd 3.0.5 - secure, fast, stable&#xa;End of status"><elem key="STAT">&#xa;FTP server status:&#xa;     Connected to ::ffff:192.168.22.2&#xa;     Logged in as ftp&#xa;     TYPE: ASCII&#xa;     No session bandwidth limit&#xa;     Session timeout in seconds is 300&#xa;     Control connection is plain text&#xa;     Data connections will be plain text&#xa;     At session startup, client count was 2&#xa;     vsFTPd 3.0.5 - secure, fast, stable&#xa;End of status</elem>
+</script></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="8.9p1 Ubuntu 3" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:8.9p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  256 c4904a5f2b7559a122e55ecc2b39f9de (ECDSA)&#xa;ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNBZYhusmlZ5TSSOJprsAA/jH3xd1F8mYbn0hkjO3ApP6JuIJTpNucaG2Mbw6y/VA7X4ZSssk4tGFz+qoMiftUo=&#xa;  256 19a45c1a0f3e85b29bc74cb72c361470 (ED25519)&#xa;ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEsyH3Gf9Z/dxdTEUHSz1LndywthUBJuht3XhHQNBOHj"><table>
+<elem key="bits">256</elem>
+<elem key="fingerprint">c4904a5f2b7559a122e55ecc2b39f9de</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNBZYhusmlZ5TSSOJprsAA/jH3xd1F8mYbn0hkjO3ApP6JuIJTpNucaG2Mbw6y/VA7X4ZSssk4tGFz+qoMiftUo=</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+</table>
+<table>
+<elem key="bits">256</elem>
+<elem key="fingerprint">19a45c1a0f3e85b29bc74cb72c361470</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIEsyH3Gf9Z/dxdTEUHSz1LndywthUBJuht3XhHQNBOHj</elem>
+<elem key="type">ssh-ed25519</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache httpd" version="2.4.54" extrainfo="(Ubuntu)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.54</cpe></service><script id="http-title" output="Jurrasic Park"><elem key="title">Jurrasic Park</elem>
+</script><script id="http-methods" output="&#xa;  Supported Methods: GET POST OPTIONS HEAD"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>POST</elem>
+<elem>OPTIONS</elem>
+<elem>HEAD</elem>
+</table>
+</script><script id="http-server-header" output="Apache/2.4.54 (Ubuntu)"><elem>Apache/2.4.54 (Ubuntu)</elem>
+</script></port>
+</ports>
+<times srtt="17259" rttvar="7908" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1672818086"/>
+<taskend task="NSE" time="1672818086"/>
+<taskbegin task="NSE" time="1672818086"/>
+<taskend task="NSE" time="1672818086"/>
+<taskbegin task="NSE" time="1672818086"/>
+<taskend task="NSE" time="1672818086"/>
+<runstats><finished time="1672818086" timestr="Wed Jan  4 15:41:26 2023" summary="Nmap done at Wed Jan  4 15:41:26 2023; 1 IP address (1 host up) scanned in 56.10 seconds" elapsed="56.10" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

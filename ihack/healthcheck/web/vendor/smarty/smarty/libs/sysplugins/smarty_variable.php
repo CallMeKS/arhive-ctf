@@ -1,3 +1,48 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9b0f4d79889c091599af3553294591ffd9651106a8236a0a79d63687cef3bd9d
-size 937
+<?php
+
+/**
+ * class for the Smarty variable object
+ * This class defines the Smarty variable object
+ *
+ * @package    Smarty
+ * @subpackage Template
+ */
+#[\AllowDynamicProperties]
+class Smarty_Variable
+{
+    /**
+     * template variable
+     *
+     * @var mixed
+     */
+    public $value = null;
+
+    /**
+     * if true any output of this variable will be not cached
+     *
+     * @var boolean
+     */
+    public $nocache = false;
+
+    /**
+     * create Smarty variable object
+     *
+     * @param mixed   $value   the value to assign
+     * @param boolean $nocache if true any output of this variable will be not cached
+     */
+    public function __construct($value = null, $nocache = false)
+    {
+        $this->value = $value;
+        $this->nocache = $nocache;
+    }
+
+    /**
+     * <<magic>> String conversion
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string)$this->value;
+    }
+}

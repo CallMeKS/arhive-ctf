@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c9667bba04ff028b79555f0d05e60daef76dfb25f1a007046d708cbd85bc1de8
-size 570
+count\_words {#language.modifier.count.words}
+============
+
+This is used to count the number of words in a variable.
+
+
+    <?php
+
+    $smarty->assign('articleTitle', 'Dealers Will Hear Car Talk at Noon.');
+
+    ?>
+
+       
+
+Where template is:
+
+
+    {$articleTitle}
+    {$articleTitle|count_words}
+
+       
+
+This will output:
+
+
+    Dealers Will Hear Car Talk at Noon.
+    7
+
+       
+
+See also [`count_characters`](#language.modifier.count.characters),
+[`count_paragraphs`](#language.modifier.count.paragraphs) and
+[`count_sentences`](#language.modifier.count.sentences).

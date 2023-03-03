@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:77c6369e5a95c2127e0df87d537ff69030462ce24d27bb1181bb49f5a5679baf
-size 652
+<?php
+
+/**
+ * Smarty plugin
+ *
+ * @package    Smarty
+ * @subpackage PluginsModifierCompiler
+ */
+/**
+ * Smarty round modifier plugin
+ * Type:     modifier
+ * Name:     round
+ * Purpose:  Returns the rounded value of num to specified precision (number of digits after the decimal point)
+ *
+ * @link   https://www.smarty.net/docs/en/language.modifier.round.tpl round (Smarty online manual)
+  *
+ * @param array $params parameters
+ *
+ * @return string with compiled code
+ */
+function smarty_modifiercompiler_round($params) {
+    return 'round((float) ' . $params[0] . ', (int) ' . ($params[1] ?? 0) . ', (int) ' . ($params[2] ?? PHP_ROUND_HALF_UP) . ')';
+}

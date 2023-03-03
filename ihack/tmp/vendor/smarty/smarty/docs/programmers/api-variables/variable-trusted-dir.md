@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bc5c2db380316f7617a16054a47d7b9240f3f386d74fc552da56ea9b03c041a5
-size 324
+\$trusted\_dir {#variable.trusted.dir}
+==============
+
+`$trusted_dir` is only for use when security is enabled. This is an
+array of all directories that are considered trusted. Trusted
+directories are where you keep php scripts that are executed directly
+from the templates with
+[`{insert}`](#language.function.insert.php).

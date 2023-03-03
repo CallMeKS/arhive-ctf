@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3840d3fa291e8b5e8fb4f53854b7afde71a59b304abd24926ce6a8305981c8f3
-size 704
+\$debugging {#variable.debugging}
+===========
+
+This enables the [debugging console](#chapter.debugging.console). The
+console is a javascript popup window that informs you of the
+[included](#language.function.include) templates, variables
+[assigned](#api.assign) from php and [config file
+variables](#language.config.variables) for the current script. It does
+not show variables assigned within a template with the
+[`{assign}`](#language.function.assign) function.
+
+The console can also be enabled from the url with
+[`$debugging_ctrl`](#variable.debugging.ctrl).
+
+See also [`{debug}`](#language.function.debug),
+[`$debug_tpl`](#variable.debug_template), and
+[`$debugging_ctrl`](#variable.debugging.ctrl).

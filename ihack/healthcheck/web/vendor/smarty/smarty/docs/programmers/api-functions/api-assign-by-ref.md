@@ -1,3 +1,42 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72ae726a5389ddfbfb251d1f630eba34277c82b7d110e28fc34363631c3ce955
-size 832
+assignByRef()
+
+assign values by reference
+
+Description
+===========
+
+void
+
+assignByRef
+
+string
+
+varname
+
+mixed
+
+var
+
+This is used to [`assign()`](#api.assign) values to the templates by
+reference.
+
+> **Note**
+>
+> With the introduction of PHP5, `assignByRef()` is not necessary for
+> most intents and purposes. `assignByRef()` is useful if you want a PHP
+> array index value to be affected by its reassignment from a template.
+> Assigned object properties behave this way by default.
+
+
+    <?php
+    // passing name/value pairs
+    $smarty->assignByRef('Name', $myname);
+    $smarty->assignByRef('Address', $address);
+    ?>
+
+       
+
+See also [`assign()`](#api.assign),
+[`clearAllAssign()`](#api.clear.all.assign), [`append()`](#api.append),
+[`{assign}`](#language.function.assign) and
+[`getTemplateVars()`](#api.get.template.vars).

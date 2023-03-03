@@ -1,3 +1,43 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7452f28c65888d0acb5ff8e7196880a23bce20665ef09e1049d5cd15eae1f46e
-size 1074
+<?php
+
+/**
+ * Smarty Method ClearAssign
+ *
+ * Smarty::clearAssign() method
+ *
+ * @package    Smarty
+ * @subpackage PluginsInternal
+ * @author     Uwe Tews
+ */
+class Smarty_Internal_Method_ClearAssign
+{
+    /**
+     * Valid for all objects
+     *
+     * @var int
+     */
+    public $objMap = 7;
+
+    /**
+     * clear the given assigned template variable(s).
+     *
+     * @api  Smarty::clearAssign()
+     * @link https://www.smarty.net/docs/en/api.clear.assign.tpl
+     *
+     * @param \Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty $data
+     * @param string|array                                            $tpl_var the template variable(s) to clear
+     *
+     * @return \Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty
+     */
+    public function clearAssign(Smarty_Internal_Data $data, $tpl_var)
+    {
+        if (is_array($tpl_var)) {
+            foreach ($tpl_var as $curr_var) {
+                unset($data->tpl_vars[ $curr_var ]);
+            }
+        } else {
+            unset($data->tpl_vars[ $tpl_var ]);
+        }
+        return $data;
+    }
+}

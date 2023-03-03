@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e4d957ea7a4ef59a9041e7e2180bf3d993b5533cdd210dee33995e0481409d0a
-size 394
+\$allow\_php\_templates {#variable.allow.php.templates}
+=======================
+
+By default the PHP template file resource is disabled. Setting
+`$allow_php_templates` to TRUE will enable PHP template files.
+
+::: {.informalexample}
+
+    <?php
+    $smarty->allow_php_templates = true;
+    ?>
+
+            
+:::
+
+> **Note**
+>
+> The PHP template file resource is an undocumented deprecated feature.

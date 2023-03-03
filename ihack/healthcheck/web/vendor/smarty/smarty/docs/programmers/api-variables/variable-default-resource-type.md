@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f8313a8825cdd3925443b643ab40041a5c5d58771474f633f1ef901491a475ce
-size 341
+\$default\_resource\_type {#variable.default.resource.type}
+=========================
+
+This tells smarty what resource type to use implicitly. The default
+value is `file`, meaning that `$smarty->display('index.tpl')` and
+`$smarty->display('file:index.tpl')` are identical in meaning. See the
+[resource](#resources) chapter for more details.

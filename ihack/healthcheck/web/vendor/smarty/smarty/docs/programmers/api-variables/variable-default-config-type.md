@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:42624b8adec63bc328047354931ce9845953ed545ba646bb7d9dd9b76749f83d
-size 347
+\$default\_config\_type {#variable.default.config.type}
+=======================
+
+This tells smarty what resource type to use for config files. The
+default value is `file`, meaning that `$smarty->configLoad('test.conf')`
+and `$smarty->configLoad('file:test.conf')` are identical in meaning.
+See the [resource](#resources) chapter for more details.

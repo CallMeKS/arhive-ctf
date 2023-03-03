@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:475ac885034368da2b2e7d29c5b5e83760dc705b44d4dc154765964b769ff2f4
-size 782
+getRegisteredObject()
+
+returns a reference to a registered object
+
+Description
+===========
+
+array
+
+getRegisteredObject
+
+string
+
+object\_name
+
+This is useful from within a custom function when you need direct access
+to a [registered object](#api.register.object). See the
+[objects](#advanced.features.objects) page for more info.
+
+
+    <?php
+    function smarty_block_foo($params, $smarty)
+    {
+      if (isset($params['object'])) {
+        // get reference to registered object
+        $obj_ref = $smarty->getRegisteredObject($params['object']);
+        // use $obj_ref is now a reference to the object
+      }
+    }
+    ?>
+
+       
+
+See also [`registerObject()`](#api.register.object),
+[`unregisterObject()`](#api.unregister.object) and [objects
+page](#advanced.features.objects)

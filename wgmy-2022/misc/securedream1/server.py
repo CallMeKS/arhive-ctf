@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8a1c269537227f3c1d3c850bfed0d55d2a5de51c6d6df8bbf365040ab1331a0a
-size 638
+#!/usr/bin/env python3
+
+print('''\033[94m
+♡ ☆ .♡‧₊˚ 
+╭◜◝ ͡ ◜◝╮  ㅤ ╭◜◝ ͡ ◜◝╮. 
+(             )  ♡   (             )☆ ♡
+╰◟◞ ͜ ◟◞╭◜◝ ͡ ◜◝╮ ͜ ◟◞╯♡ 
+. ☆  ㅤㅤ(                )☆ ♡
+♡ 　      ╰◟◞ ͜ ◟◞╯ . ☆
+
+	[Secure Dream v1.0]
+\033[0m''')
+
+payload = input("What is your dream in life?\n")
+if any(filter(lambda c: c in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"\'', payload)):
+	print("\nA𝒘𝒘... W𝒆 𝒅𝒐𝒏'𝒕 𝒖𝒏𝒅𝒆𝒓𝒔𝒕𝒂𝒏𝒅 𝒚𝒐𝒖𝒓 𝒅𝒓𝒆𝒂𝒎 :(")
+else:
+	eval(payload)

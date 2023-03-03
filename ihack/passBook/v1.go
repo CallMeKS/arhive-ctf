@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:358745c4463bbe727a331ac825b0951628299f63969eaac70df0c919df7544b5
-size 423
+package main
+
+
+import (
+        "fmt"
+
+
+)
+
+
+
+func main() {
+
+    line1 := "Caraval"
+    check := [6]string{"Caraval","The Book of Shells","Legendary","Beasts of Prey", "Finale","The Queen of Nothing"}
+    confirm :=0
+    for _, book_check:= range check {
+        if book_check == line1 {
+            confirm +=1
+        }
+    }
+    if confirm == 0 {
+    fmt.Println("test")
+    } else {
+    fmt.Println("yessy")
+    }
+
+
+}
+
+

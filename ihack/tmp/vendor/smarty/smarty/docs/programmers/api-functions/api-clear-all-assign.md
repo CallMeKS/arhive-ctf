@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:68bce70e51c0c81a1dca0303aa194546b60260dc907d062b1b128b88163be76b
-size 646
+clearAllAssign()
+
+clears the values of all assigned variables
+
+Description
+===========
+
+void
+
+clearAllAssign
+
+
+    <?php
+    // passing name/value pairs
+    $smarty->assign('Name', 'Fred');
+    $smarty->assign('Address', $address);
+
+    // will output above
+    print_r( $smarty->getTemplateVars() );
+
+    // clear all assigned variables
+    $smarty->clearAllAssign();
+
+    // will output nothing
+    print_r( $smarty->getTemplateVars() );
+
+    ?>
+
+       
+
+See also [`clearAssign()`](#api.clear.assign),
+[`clearConfig()`](#api.clear.config),
+[`getTemplateVars()`](#api.get.template.vars), [`assign()`](#api.assign)
+and [`append()`](#api.append)

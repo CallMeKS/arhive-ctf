@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1820d428d897c232f1927692061267b866c28bfd56cf0ac2ceaa00f7a5164553
-size 354
+\$smarty\_debug\_id {#variable.smarty.debug.id}
+===================
+
+The value of `$smarty_debug_id` defines the URL keyword to enable
+debugging at browser level. The default value is `SMARTY_DEBUG`.
+
+See also [debugging console](#chapter.debugging.console) section,
+[`$debugging`](#variable.debugging) and
+[`$debugging_ctrl`](#variable.debugging.ctrl).

@@ -1,3 +1,73 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ade04245a1da8eacdfd8b9f553f9b26b946b9458a76f4c4cf9a365ffd6d20f7
-size 1882
+{if $error eq true}
+<div class="alert alert-danger" role="alert">
+    !Error
+</div>
+{/if}
+
+{if $success eq true}
+<div class="alert alert-success" role="alert">
+    File has beem uploaded!
+</div>
+{/if}
+<div class="row">
+
+  <div class="col-12">
+    <span class="login100-form-title p-b-43">
+      System Health Check
+  </span>
+  <a style="float:right" class="btn btn-sm btn-danger" href="index.php?page=eyJjdCI6InhLaUUrRmdUbVBJcTRPOFpCVVdXRUE9PSIsIml2IjoiN2ZmZTA2MzNjZjljMzdhNTdmMzQ3M2Y3OGMzYWQwOGEiLCJzIjoiNmY5ZGE4OTgzOTQ5YmNkOSJ9">Logout</a>
+</div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+        
+      <div class="card-body">
+        <form>
+    
+    
+          <div id="result">
+          
+          </div>
+            
+            <div class="form-group">
+              <label for="ip">Server</label>
+              <select class="form-control" id="ip" >
+                {$list}
+              </select>
+            
+            </div>
+          
+            <a type="button" href="javascript:void(0)" onclick="submit()" class="btn btn-primary">Submit</a>
+          </form>
+      </div>
+    </div>
+
+  </div>
+
+<div class="col-12 mt-2">
+
+  <div class="card">
+    <div class="card-header">
+    Upload New List
+    </div>
+    <div class="card-body">
+      <form action="index.php?page=eyJjdCI6InNUM1FmUXgzZlg2cHNicmdFZDNSVXc9PSIsIml2IjoiODQ4ZjMxNmZjMDU3YzRmOWJkZmNmYzE5Y2I3MzU3NDIiLCJzIjoiYzIzZjJiY2Y0NDdhNTNlMiJ9" method="POST" enctype="multipart/form-data">
+        <label class="form-label" for="customFile">Choose file (only .txt file allowed)</label>
+        <input type="file" class="form-control" name="file"  accept=".txt"/>
+        <input class="btn btn-primary" type="submit">
+      </form>
+
+
+
+    </div>
+  </div>
+
+
+
+</div>
+
+</div>
+
+
+<script src="/assets/enc.js"></script>

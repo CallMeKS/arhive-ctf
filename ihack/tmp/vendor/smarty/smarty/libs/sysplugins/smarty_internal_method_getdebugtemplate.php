@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e5ac1ea580a657e9debc548e5428e902ec3b5cb92eb1fe938e04bf6988f3a3f3
-size 709
+<?php
+
+/**
+ * Smarty Method GetDebugTemplate
+ *
+ * Smarty::getDebugTemplate() method
+ *
+ * @package    Smarty
+ * @subpackage PluginsInternal
+ * @author     Uwe Tews
+ */
+class Smarty_Internal_Method_GetDebugTemplate
+{
+    /**
+     * Valid for Smarty and template object
+     *
+     * @var int
+     */
+    public $objMap = 3;
+
+    /**
+     * return name of debugging template
+     *
+     * @api Smarty::getDebugTemplate()
+     *
+     * @param \Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty $obj
+     *
+     * @return string
+     */
+    public function getDebugTemplate(Smarty_Internal_TemplateBase $obj)
+    {
+        $smarty = $obj->_getSmartyObj();
+        return $smarty->debug_tpl;
+    }
+}

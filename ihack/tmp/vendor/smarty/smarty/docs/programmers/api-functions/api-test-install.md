@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:74816067af49c59f8b882d9b3e37d52df4612deab46d79795ec3f6ddc0dfa3c9
-size 352
+testInstall()
+
+checks Smarty installation
+
+Description
+===========
+
+void
+
+testInstall
+
+This function verifies that all required working folders of the Smarty
+installation can be accessed. It does output a corresponding protocol.
+
+
+    <?php
+    require_once('Smarty.class.php');
+    $smarty  = new Smarty();
+    $smarty->testInstall();
+    ?>
+
+       

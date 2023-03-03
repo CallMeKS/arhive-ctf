@@ -1,3 +1,51 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6f175bae1a3b5c1ddd8ba91e89733fbbc8cf95ae4c0e35b8dc0cd305ce1e42ac
-size 1382
+regex\_replace {#language.modifier.regex.replace}
+==============
+
+A regular expression search and replace on a variable. Use the
+[`preg_replace()`](&url.php-manual;preg_replace) syntax from the PHP
+manual.
+
+> **Note**
+>
+> Although Smarty supplies this regex convenience modifier, it is
+> usually better to apply regular expressions in PHP, either via custom
+> functions or modifiers. Regular expressions are considered application
+> code and are not part of presentation logic.
+
+Parameters
+
+   Parameter Position    Type    Required   Default  Description
+  -------------------- -------- ---------- --------- ------------------------------------------------
+           1            string     Yes       *n/a*   This is the regular expression to be replaced.
+           2            string     Yes       *n/a*   This is the string of text to replace with.
+
+
+    <?php
+
+    $smarty->assign('articleTitle', "Infertility unlikely to\nbe passed on, experts say.");
+
+    ?>
+
+       
+
+Where template is:
+
+
+    {* replace each carriage return, tab and new line with a space *}
+
+    {$articleTitle}
+    {$articleTitle|regex_replace:"/[\r\t\n]/":" "}
+
+       
+
+Will output:
+
+
+    Infertility unlikely to
+    be passed on, experts say.
+    Infertility unlikely to be passed on, experts say.
+
+       
+
+See also [`replace`](#language.modifier.replace) and
+[`escape`](#language.modifier.escape).

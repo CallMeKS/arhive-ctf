@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:604c8691341ca0c4b3e9ed48d97bd68894ee6404892cc63441e7b7da47ba5232
-size 739
+Advanced Features {#advanced.features}
+=================
+
+## Table of contents
+
+- [Security](./advanced-features/advanced-features-security.md)
+- [Changing settings by template](./advanced-features/advanced-features-template-settings.md)
+- [Template Inheritance](./advanced-features/advanced-features-template-inheritance.md)
+- [Streams](./advanced-features/advanced-features-streams.md)
+- [Objects](./advanced-features/advanced-features-objects.md)
+- [Static Classes](./advanced-features/advanced-features-static-classes.md)
+- [Prefilters](./advanced-features/advanced-features-prefilters.md)
+- [Postfilters](./advanced-features/advanced-features-postfilters.md)
+- [Output Filters](./advanced-features/advanced-features-outputfilters.md)

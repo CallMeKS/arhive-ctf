@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3dfcfd2d4470ac200c8a59237d68d4aaeeb1e0fb3ead8fa62665c5d683e33c39
-size 372
+\$auto\_literal {#variable.auto.literal}
+===============
+
+The Smarty delimiter tags { and } will be ignored so long as they are
+surrounded by white space. This behavior can be disabled by setting
+auto\_literal to false.
+
+::: {.informalexample}
+
+    <?php
+    $smarty->auto_literal = false;
+    ?>
+
+            
+:::
+
+See also [Escaping Smarty Parsing](#language.escaping),

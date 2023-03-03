@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7117b3d056f279b3db81b69319ca516a7597cd07be47a0154dba7794cf6a7d11
-size 381
+\$config\_booleanize {#variable.config.booleanize}
+====================
+
+If set to TRUE, [config files](#config.files) values of `on/true/yes`
+and `off/false/no` get converted to boolean values automatically. This
+way you can use the values in the template like so:
+`{if #foobar#}...{/if}`. If foobar was `on`, `true` or `yes`, the `{if}`
+statement will execute. Defaults to TRUE.

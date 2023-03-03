@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c3512479200fb093150d3695890d81342c33db614146454e7db0d3f89ea43ce7
-size 541
+<?php
+/**
+ * Smarty plugin
+ *
+ * @package    Smarty
+ * @subpackage PluginsModifier
+ */
+
+/**
+ * Smarty explode modifier plugin
+ * Type:     modifier
+ * Name:     explode
+ * Purpose:  split a string by a string
+ *
+ * @param string   $separator
+ * @param string   $string
+ * @param int|null $limit
+ *
+ * @return array
+ */
+function smarty_modifier_explode($separator, $string, ?int $limit = null)
+{
+    // provide $string default to prevent deprecation errors in PHP >=8.1
+    return explode($separator, $string ?? '', $limit ?? PHP_INT_MAX);
+}

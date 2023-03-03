@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a28d687c6ceafa5f35b5aea4fa2953d246bf88895350e0466f7f75b9245d396b
-size 249
+\$right\_delimiter {#variable.right.delimiter}
+==================
+
+This is the right delimiter used by the template language. Default is
+`}`.
+
+See also [`$left_delimiter`](#variable.left.delimiter) and [escaping
+smarty parsing](#language.escaping).

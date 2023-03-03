@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a155834f21fb8de7c08b159b3b57b6d8890d95190ca13dea2063809996e69787
-size 2155
+Testing /home/ks/cloud-storage ...
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: upload.php, line 16 
+   Info: Unsanitized input from an HTTP header flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: upload.php, line 27 
+   Info: Unsanitized input from an HTTP header flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: upload.php, line 31 
+   Info: Unsanitized input from an HTTP header flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: upload.php, line 37 
+   Info: Unsanitized input from an uploaded file flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] File Inclusion 
+   Path: page.php, line 16 
+   Info: Unsanitized input from an HTTP parameter flows into _, where it is included dynamically. Allowing unvalidated user input to control files that are included dynamically in PHP can lead to malicious code execution.
+
+ ✗ [High] Path Traversal 
+   Path: upload.php, line 20 
+   Info: Unsanitized input from an uploaded file flows into move_uploaded_file, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to move arbitrary files.
+
+ ✗ [High] Path Traversal 
+   Path: upload.php, line 23 
+   Info: Unsanitized input from an uploaded file flows into rename, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to move arbitrary files.
+
+ ✗ [High] Path Traversal 
+   Path: upload.php, line 26 
+   Info: Unsanitized input from an uploaded file flows into unlink, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to delete arbitrary files.
+

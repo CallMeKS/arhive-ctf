@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c71ed52f2110056ec4dbbfe90d11bd00be9c4fe2993aeaeb6d425792d7138730
-size 361
+<?php
+use Nullix\CryptoJsAes\CryptoJsAes;
+require 'vendor/autoload.php';
+
+
+
+// decrypt
+$code='test';
+$password = "8eac4ee0790850314134f837b47dfd56";
+$encrypted = @CryptoJsAes::encrypt($code,$password);
+$decrypted = @CryptoJsAes::decrypt($encrypted, $password);
+
+echo "Encrypted: " . $encrypted . "\n";
+echo "Decrypted: " . print_r($decrypted, true) . "\n";
+?>
+

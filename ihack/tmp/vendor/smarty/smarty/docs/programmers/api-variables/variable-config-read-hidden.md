@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1cb8293e31f414ecc10da7c6e04a722de4a64aeaa2e61bcbf7e8a123d9131152
-size 404
+\$config\_read\_hidden {#variable.config.read.hidden}
+======================
+
+If set to TRUE, hidden sections ie section names beginning with a
+period(.) in [config files](#config.files) can be read from templates.
+Typically you would leave this FALSE, that way you can store sensitive
+data in the config files such as database parameters and not worry about
+the template loading them. FALSE by default.

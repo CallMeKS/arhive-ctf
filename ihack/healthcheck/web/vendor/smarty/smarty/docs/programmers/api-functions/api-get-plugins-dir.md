@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:79112bd6e229aa3bc1008ddd8f738d045cfed1ff0794898b813d67707afdef86
-size 535
+getPluginsDir()
+
+return the directory where plugins are stored
+
+Description
+===========
+
+array
+
+getPluginsDir
+
+
+    <?php
+
+    // set some plugins directories
+    $smarty->setPluginsDir(array(
+        './plugins',
+        './plugins_2',
+    ));
+
+    // get all directories where plugins are stored
+    $config_dir = $smarty->getPluginsDir();
+    var_dump($config_dir); // array
+
+    ?>
+
+       
+
+See also [`setPluginsDir()`](#api.set.plugins.dir),
+[`addPluginsDir()`](#api.add.plugins.dir) and
+[`$plugins_dir`](#variable.plugins.dir).

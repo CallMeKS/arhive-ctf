@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9ff74ab02c7c1a9b7ec68434ed8e9b1b50993e4d6fd89ba0660231fca3420fee
-size 229
+\$locking\_timeout {#variable.locking.timeout}
+==================
+
+This is maximum time in seconds a cache lock is valid to avoid dead
+locks. The default value is 10 seconds.
+
+See also [`$cache_locking`](#variable.cache.locking)

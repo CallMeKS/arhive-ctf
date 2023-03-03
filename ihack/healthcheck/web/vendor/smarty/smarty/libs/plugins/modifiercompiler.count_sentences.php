@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:efe05194e1114299fda6a5ab784fe30441cafc83e38a615892db47ef3d44bf9e
-size 746
+<?php
+/**
+ * Smarty plugin
+ *
+ * @package    Smarty
+ * @subpackage PluginsModifierCompiler
+ */
+/**
+ * Smarty count_sentences modifier plugin
+ * Type:     modifier
+ * Name:     count_sentences
+ * Purpose:  count the number of sentences in a text
+ *
+ * @link   https://www.smarty.net/manual/en/language.modifier.count.paragraphs.php
+ *          count_sentences (Smarty online manual)
+ * @author Uwe Tews
+ *
+ * @param array $params parameters
+ *
+ * @return string with compiled code
+ */
+function smarty_modifiercompiler_count_sentences($params)
+{
+    // find periods, question marks, exclamation marks with a word before but not after.
+    return 'preg_match_all("#\w[\.\?\!](\W|$)#S' . Smarty::$_UTF8_MODIFIER . '", ' . $params[ 0 ] . ', $tmp)';
+}

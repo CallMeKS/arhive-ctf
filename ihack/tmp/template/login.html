@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:324522a5270db8801781f647361308ab227df1b58f612e54d0ad506d951b33ad
-size 976
+{if $error eq true}
+<div class="alert alert-danger" role="alert">
+    !Error
+</div>
+{/if}
+<form action="" method="POST" class="login100-form validate-form">
+    <span class="login100-form-title p-b-43">
+        System Health Check
+    </span>
+    <div class="wrap-input100 rs1 validate-input" data-validate="Username is required">
+        <input class="input100" type="text" name="username">
+        <span class="label-input100">Username</span>
+    </div>
+    <div class="wrap-input100 rs2 validate-input" data-validate="Password is required">
+        <input class="input100" type="password" name="password">
+        <span class="label-input100">Password</span>
+    </div>
+    <div class="container-login100-form-btn">
+        <button class="login100-form-btn">
+            Sign in
+        </button>
+    </div>
+    <div class="text-center w-full p-t-23">
+        <a href="#" class="txt1">
+            Forgot password?
+        </a>
+    </div>
+</form>

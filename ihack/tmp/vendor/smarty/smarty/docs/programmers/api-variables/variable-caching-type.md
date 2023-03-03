@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:41a7296616a2ec8a5987178662673bdebee5e1a22388969e00c6f50181dc7bf1
-size 302
+\$caching\_type {#variable.caching.type}
+===============
+
+This property specifies the name of the caching handler to use. It
+defaults to `file`, enabling the internal filesystem based cache
+handler.
+
+See [Custom Cache Implementation](#caching.custom) for pointers on
+setting up your own cache handler.

@@ -1,3 +1,76 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2ede2dff534504c25db0ecf06ba18aeca3131932301eb25f18633dd13eb2afeb
-size 5394
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.93 scan initiated Wed Jan  4 19:00:28 2023 as: nmap -vvv -p 22,80 -A -oA 192.168.22.100 192.168.22.100 -->
+<nmaprun scanner="nmap" args="nmap -vvv -p 22,80 -A -oA 192.168.22.100 192.168.22.100" start="1672830028" startstr="Wed Jan  4 19:00:28 2023" version="7.93" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="2" services="22,80"/>
+<verbose level="3"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1672830029"/>
+<taskend task="NSE" time="1672830029"/>
+<taskbegin task="NSE" time="1672830029"/>
+<taskend task="NSE" time="1672830029"/>
+<taskbegin task="NSE" time="1672830029"/>
+<taskend task="NSE" time="1672830029"/>
+<taskbegin task="Ping Scan" time="1672830029"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="192.168.22.100" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<taskend task="Ping Scan" time="1672830029" extrainfo="1 total hosts"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1672830029"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1672830029"/>
+<taskbegin task="Connect Scan" time="1672830029"/>
+<taskend task="Connect Scan" time="1672830029" extrainfo="2 total ports"/>
+<taskbegin task="Service scan" time="1672830029"/>
+<taskend task="Service scan" time="1672830035" extrainfo="2 services on 1 host"/>
+<taskbegin task="NSE" time="1672830035"/>
+<taskend task="NSE" time="1672830036"/>
+<taskbegin task="NSE" time="1672830036"/>
+<taskend task="NSE" time="1672830036"/>
+<taskbegin task="NSE" time="1672830036"/>
+<taskend task="NSE" time="1672830036"/>
+<host starttime="1672830029" endtime="1672830036"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="192.168.22.100" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="7.9p1 Debian 10+deb10u2" extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:7.9p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  2048 9b5ed2e002712b8c09ee00e8a2739523 (RSA)&#xa;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9tKYBPqFK2gonKTfgWkcOdp+a/VKUNSU63w3Kyf3b+hlEsOEZDtuODl9tadtbWkLCap8ojeJMExZuZ7Zs+73EHkv2KEIVd0w3Lu2BBE8Cp+iuZem4yvst5Jak+Jgb3HK8Ka1K2xAzXvk0kH3WJHGLO4AxCc+jScUJ3ijNnRkXBO3v/eCWSrDhSM5ekkA5YRN3pX5+mF9YTw5UOeEY/oV45aYYDNcr37Y5mv1mHmx4WI1Y7WyxjqdvlRd4OHj+0huni0qzBtV6IabssdTsOyCJVK3nUC5fxmW8yN0Lk0zY1Jpd/J1sUQ9V9nx2puIknswD+lhuJHGCwt2l/tnSttIB&#xa;  256 e9a2d72ca5755356788cddc3a1d0af0f (ECDSA)&#xa;ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBImnEb/e+ojvxhuCmwdF2koBLiEkHVDaQu75FFKdY3ifHOBOzyYGEefZcwgd+tslubu/EK531cFfzsRIQKdFXMY=&#xa;  256 ae3a272d872e8470cd41970c7df7e273 (ED25519)&#xa;ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPxTDIdzm73ha8qgqez6rD+bb1VbCSG05fEAxf+rJQ9D"><table>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABAQC9tKYBPqFK2gonKTfgWkcOdp+a/VKUNSU63w3Kyf3b+hlEsOEZDtuODl9tadtbWkLCap8ojeJMExZuZ7Zs+73EHkv2KEIVd0w3Lu2BBE8Cp+iuZem4yvst5Jak+Jgb3HK8Ka1K2xAzXvk0kH3WJHGLO4AxCc+jScUJ3ijNnRkXBO3v/eCWSrDhSM5ekkA5YRN3pX5+mF9YTw5UOeEY/oV45aYYDNcr37Y5mv1mHmx4WI1Y7WyxjqdvlRd4OHj+0huni0qzBtV6IabssdTsOyCJVK3nUC5fxmW8yN0Lk0zY1Jpd/J1sUQ9V9nx2puIknswD+lhuJHGCwt2l/tnSttIB</elem>
+<elem key="fingerprint">9b5ed2e002712b8c09ee00e8a2739523</elem>
+<elem key="bits">2048</elem>
+<elem key="type">ssh-rsa</elem>
+</table>
+<table>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBImnEb/e+ojvxhuCmwdF2koBLiEkHVDaQu75FFKdY3ifHOBOzyYGEefZcwgd+tslubu/EK531cFfzsRIQKdFXMY=</elem>
+<elem key="fingerprint">e9a2d72ca5755356788cddc3a1d0af0f</elem>
+<elem key="bits">256</elem>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+</table>
+<table>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIPxTDIdzm73ha8qgqez6rD+bb1VbCSG05fEAxf+rJQ9D</elem>
+<elem key="fingerprint">ae3a272d872e8470cd41970c7df7e273</elem>
+<elem key="bits">256</elem>
+<elem key="type">ssh-ed25519</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Gunicorn" version="19.7.0" method="probed" conf="10"><cpe>cpe:/a:gunicorn:gunicorn:19.7.0</cpe></service><script id="http-server-header" output="gunicorn/19.7.0"><elem>gunicorn/19.7.0</elem>
+</script><script id="http-title" output="            My Super Duper Site        "><elem key="title">&#xa;            My Super Duper Site&#xa;        </elem>
+</script><script id="http-methods" output="&#xa;  Supported Methods: GET OPTIONS HEAD"><table key="Supported Methods">
+<elem>GET</elem>
+<elem>OPTIONS</elem>
+<elem>HEAD</elem>
+</table>
+</script></port>
+</ports>
+<times srtt="14194" rttvar="8620" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1672830036"/>
+<taskend task="NSE" time="1672830036"/>
+<taskbegin task="NSE" time="1672830036"/>
+<taskend task="NSE" time="1672830036"/>
+<taskbegin task="NSE" time="1672830036"/>
+<taskend task="NSE" time="1672830036"/>
+<runstats><finished time="1672830036" timestr="Wed Jan  4 19:00:36 2023" summary="Nmap done at Wed Jan  4 19:00:36 2023; 1 IP address (1 host up) scanned in 7.63 seconds" elapsed="7.63" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

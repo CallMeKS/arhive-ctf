@@ -1,3 +1,42 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ff940799108c9083de5f331e69d76663ac4113a4dcf9ee2329ce8b84ced1603d
-size 1098
+<?php
+require_once 'cacheresource.pdo.php';
+
+/**
+ * PDO Cache Handler with GZIP support
+ * Example usage :
+ *      $cnx    =   new PDO("mysql:host=localhost;dbname=mydb", "username", "password");
+ *      $smarty->setCachingType('pdo_gzip');
+ *      $smarty->loadPlugin('Smarty_CacheResource_Pdo_Gzip');
+ *      $smarty->registerCacheResource('pdo_gzip', new Smarty_CacheResource_Pdo_Gzip($cnx, 'smarty_cache'));
+ *
+ * @require Smarty_CacheResource_Pdo class
+ * @author  Beno!t POLASZEK - 2014
+ */
+class Smarty_CacheResource_Pdo_Gzip extends Smarty_CacheResource_Pdo
+{
+    /**
+     * Encodes the content before saving to database
+     *
+     * @param string $content
+     *
+     * @return string $content
+     * @access protected
+     */
+    protected function inputContent($content)
+    {
+        return gzdeflate($content);
+    }
+
+    /**
+     * Decodes the content before saving to database
+     *
+     * @param string $content
+     *
+     * @return string $content
+     * @access protected
+     */
+    protected function outputContent($content)
+    {
+        return gzinflate($content);
+    }
+}

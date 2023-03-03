@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4ea34d11a7b2710b908570ce7b9f199e4e4739a371c194d6418431a793ebac8e
-size 200
+version: '3'
+services:
+  wishlist:
+    build: .
+    ports:
+      - "3000:3000"
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 200M

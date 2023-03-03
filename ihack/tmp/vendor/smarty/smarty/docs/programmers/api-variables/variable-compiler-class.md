@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ba6305240535bfb77b95a869eadee403e886725a96f8c383875bb04cee792527
-size 214
+\$compiler\_class {#variable.compiler.class}
+=================
+
+Specifies the name of the compiler class that Smarty will use to compile
+the templates. The default is \'Smarty\_Compiler\'. For advanced users
+only.

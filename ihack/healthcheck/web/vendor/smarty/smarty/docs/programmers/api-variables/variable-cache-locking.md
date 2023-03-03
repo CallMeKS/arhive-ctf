@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c15004b051cf03505d2a76e9b06181ed9c341cbefb7c103e9cbc5ba714f8a763
-size 382
+\$cache\_locking {#variable.cache.locking}
+================
+
+Cache locking avoids concurrent cache generation. This means resource
+intensive pages can be generated only once, even if they\'ve been
+requested multiple times in the same moment.
+
+Cache locking is disabled by default. To enable it set `$cache_locking`
+to TRUE.
+
+See also [`$locking_timeout`](#variable.locking.timeout)

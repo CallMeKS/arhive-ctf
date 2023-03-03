@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:72196aa7ccba700a1d5023d859e987d6cafe4e53ddc7ac39250427528e9487bc
-size 503
+# Nmap 7.93 scan initiated Wed Jan  4 15:40:30 2023 as: nmap -vvv -p 21,22,80 -A -oA 192.168.22.100 192.168.22.100
+# Ports scanned: TCP(3;21-22,80) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 192.168.22.100 ()	Status: Up
+Host: 192.168.22.100 ()	Ports: 21/open/tcp//ftp//vsftpd 2.0.8 or later/, 22/open/tcp//ssh//OpenSSH 8.9p1 Ubuntu 3 (Ubuntu Linux; protocol 2.0)/, 80/open/tcp//http//Apache httpd 2.4.54 ((Ubuntu))/
+# Nmap done at Wed Jan  4 15:41:26 2023 -- 1 IP address (1 host up) scanned in 56.10 seconds

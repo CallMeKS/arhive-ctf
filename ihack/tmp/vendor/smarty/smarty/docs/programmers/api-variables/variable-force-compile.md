@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c51e7f3b97633b89f0edda50fe84eb163146d2563b6d1640259ed695ced02479
-size 445
+\$force\_compile {#variable.force.compile}
+================
+
+This forces Smarty to (re)compile templates on every invocation. This
+setting overrides [`$compile_check`](#variable.compile.check). By
+default this is FALSE. This is handy for development and
+[debugging](#chapter.debugging.console). It should never be used in a
+production environment. If [`$caching`](#variable.caching) is enabled,
+the cache file(s) will be regenerated every time.

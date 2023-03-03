@@ -1,3 +1,194 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:94c620eaa714db76f8096acf84b7747a3b55886e0d56e5a48602b55c38007837
-size 6922
+[H[2J[3JThis is Unix or Linux
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                           WAP - Web Application Protection                          *
+*                    Source Code Static Analysis & Data Mining Tool                   *
+*                                     version 2.1                                   *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+    * Collecting the number and type of files to analyse ......................... 
+
+    * Generating AST's ........................................................... 
+
+    * Taint Analysis .............................................................
+      - SQL Injection 
+      - RFI, LFI, DT, SCD, OSCI and PHP code injection 
+      - Cross Site Scripting - XSS 
+
+        (this task can take several minutes, depending the number of files to
+         analyze. So, you can take a coffee or something else :-) )
+
+    * Detecting vulnerabilities and predicting false positives ...................
+
+
+Press enter to view results...
+[0;1m
+
+ PROJECT ANALYSIS: 
+
+  + Global Summary:[0;0m
+     - Project directory: /home/ks/cloud-storage
+     - Total time: 372 ms
+     - Files: 2
+     - Lines of code: 63
+
+     - Regular files: 2
+     - Include files: 0
+
+     - Automatic correction: [0;1mno[0;0m
+[0;1m
+
+  + Type of Analysis: SQLI
+     > Summary:[0;0m
+        - Time of analysis: 73 ms
+        - Number of vulnerabilities detected: [0;1mnone[0;0m
+[0;1m
+
++ + + Type of Analysis: XSS
+     > Summary:[0;0m
+        - Time of analysis: 80 ms
+        - Number of vulnerabilities detected: [0;1m5[0;0m
+           - Real vulnerabilities: [0;1m4[0;0m
+           - False positives: [0;1m1[0;0m
+        - Number of vulnerable files: [0;1m1[0;0m
+        - List of vulnerable files:
+	    /home/ks/cloud-storage/upload.php
+
+
+Press enter to view vulnerabilities...
+[0;1m
+> > > >  File: [0;0m/home/ks/cloud-storage/upload.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 40
+        - Is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m5[0;0m
+           - Real Vulnerabilities: [0;1m4[0;0m
+           - False positives: [0;1m1[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	16:         echo '<META http-equiv="refresh" content="0;URL='.$_SERVER['HTTP_REFERER'].'">';
+[0;1m
+	Corrected code:[0;0m
+	16:         echo '<META http-equiv="refresh" content="0;URL='.san_out($_SERVER['HTTP_REFERER']).'">';
+
+[0;1m
+	= = = =  Vulnerability n.: 2  = = = =
+	Vulnerable code:[0;0m
+	27:             echo '<META http-equiv="refresh" content="0;URL='.$_SERVER['HTTP_REFERER'].'">';
+[0;1m
+	Corrected code:[0;0m
+	27:             echo '<META http-equiv="refresh" content="0;URL='.san_out($_SERVER['HTTP_REFERER']).'">';
+
+[0;1m
+	= = = =  Vulnerability n.: 3  = = = =
+	Vulnerable code:[0;0m
+	28:             die("<script>alert('.{$file_ext} file is not allowed!')</script>");
+[0;1m
+	Corrected code:[0;0m
+	28:             die(""<script>alert('.{$file_ext} file is not allowed!')</script>");
+
+[0;1m
+	= = = =  Vulnerability n.: 4  = = = =
+	Vulnerable code:[0;0m
+	31:         echo '<META http-equiv="refresh" content="0;URL='.$_SERVER['HTTP_REFERER'].'">';
+[0;1m
+	Corrected code:[0;0m
+	31:         echo '<META http-equiv="refresh" content="0;URL='.san_out($_SERVER['HTTP_REFERER']).'">';
+
+[0;1m
+	= = = =  Vulnerability n.: 5   >>> is a possible False Positive <<<  = = = =
+	Vulnerable code:[0;0m
+	9:     $file_name = $_FILES['upload_file']['name'];
+	9:     $file_name = $_FILES['upload_file']['name'];
+	12:     $file_ext = strtolower(substr($file_name,strrpos($file_name,".")+1));
+	22:              $img_path = UPLOAD_PATH . '/'. rand(10, 99).date("YmdHis").".".$file_ext;
+	37:     echo "The file was uploaded to: " . $img_path;
+[0;1m
+	False Positive justification:[0;0m
+	12: substr, concatenation
+	12: substr, substr, concatenation
+	22: concatenation
+	37: concatenation
+
+[0;1m
+
+  + Type of Analysis: RFI/LFI/DT/SCD/OS/Eval
+	     > Summary:[0;0m
+        - Time of analyse: 94 ms
+        - Number of vulnerabilities detected: [0;1m3[0;0m
+           - Real vulnerabilities: [0;1m3[0;0m
+           - False positives: [0;1m0[0;0m
+        - Number of vulnerable files: [0;1m2[0;0m
+        - List of vulnerable files:
+	    /home/ks/cloud-storage/page.php
+	    /home/ks/cloud-storage/upload.php
+
+
+Press enter to view vulnerabilities...
+[0;1m
+> > > >  File: [0;0m/home/ks/cloud-storage/page.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 23
+        - Is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m1[0;0m
+           - Real Vulnerabilities: [0;1m1[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Type: RFI, LFI, DT[0;0m
+[0;1m
+	Vulnerable code:[0;0m
+	13:   $file = $_GET["show"];
+	16:     include($file);
+
+[0;1m	Corrected code:[0;0m
+	13:   $file = $_GET["show"];
+	16: if (san_mix($_GET["show"], 'include', null) == 0)
+	17:	    include($file);
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/cloud-storage/upload.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 40
+        - Is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m2[0;0m
+           - Real Vulnerabilities: [0;1m2[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Type: RFI, LFI, DT[0;0m
+[0;1m
+	Vulnerable code:[0;0m
+	11:     $temp_file = $_FILES['upload_file']['tmp_name'];
+	20: if (move_uploaded_file($temp_file, $upload_file)) { if(!in_array($file_ext,$disallowed_exts)){ $img_path = UPLOAD_PATH . '/'. rand(10, 99).date("YmdHis").".".$file_ext;
+
+[0;1m	Corrected code:[0;0m
+	11:     $temp_file = $_FILES['upload_file']['tmp_name'];
+	20: if (san_mix($_FILES['upload_file']['tmp_name'], 'move_uploaded_file', null) == 0)
+	21:	if (move_uploaded_file($temp_file, $upload_file)) { if(!in_array($file_ext,$disallowed_exts)){ $img_path = UPLOAD_PATH . '/'. rand(10, 99).date("YmdHis").".".$file_ext;
+
+[0;1m
+	= = = =  Vulnerability n.: 2  = = = =
+	Type: RFI, LFI, DT[0;0m
+[0;1m
+	Vulnerable code:[0;0m
+	9:     $file_name = $_FILES['upload_file']['name'];
+	14:     $upload_file = UPLOAD_PATH . '/' . $file_name;
+	26:             @unlink($upload_file);
+
+[0;1m	Corrected code:[0;0m
+	9:     $file_name = $_FILES['upload_file']['name'];
+	14:     $upload_file = UPLOAD_PATH . '/' . $file_name;
+	26: if (san_mix($_FILES['upload_file']['name'], 'unlink', null) == 0)
+	27:	            @unlink($upload_file);
+

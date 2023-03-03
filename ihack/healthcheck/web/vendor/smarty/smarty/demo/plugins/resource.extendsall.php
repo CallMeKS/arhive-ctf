@@ -1,3 +1,62 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:db83d70abf09032dc809dc52f41d85210ca01db3164f98e55955b0060a2e8441
-size 1927
+<?php
+
+/**
+ * Extends All Resource
+ * Resource Implementation modifying the extends-Resource to walk
+ * through the template_dirs and inherit all templates of the same name
+ *
+ * @package Resource-examples
+ * @author  Rodney Rehm
+ */
+class Smarty_Resource_Extendsall extends Smarty_Internal_Resource_Extends
+{
+    /**
+     * populate Source Object with meta data from Resource
+     *
+     * @param Smarty_Template_Source   $source    source object
+     * @param Smarty_Internal_Template $_template template object
+     *
+     * @return void
+     */
+    public function populate(Smarty_Template_Source $source, Smarty_Internal_Template $_template = null)
+    {
+        $uid = '';
+        $sources = array();
+        $timestamp = 0;
+        foreach ($source->smarty->getTemplateDir() as $key => $directory) {
+            try {
+                $s = Smarty_Resource::source(null, $source->smarty, 'file:' . '[' . $key . ']' . $source->name);
+                if (!$s->exists) {
+                    continue;
+                }
+                $sources[ $s->uid ] = $s;
+                $uid .= $s->filepath;
+                $timestamp = $s->timestamp > $timestamp ? $s->timestamp : $timestamp;
+            } catch (SmartyException $e) {
+            }
+        }
+        if (!$sources) {
+            $source->exists = false;
+            return;
+        }
+        $sources = array_reverse($sources, true);
+        reset($sources);
+        $s = current($sources);
+        $source->components = $sources;
+        $source->filepath = $s->filepath;
+        $source->uid = sha1($uid . $source->smarty->_joined_template_dir);
+        $source->exists = true;
+        $source->timestamp = $timestamp;
+    }
+
+    /**
+     * Disable timestamp checks for extendsall resource.
+     * The individual source components will be checked.
+     *
+     * @return bool false
+     */
+    public function checkTimestamps()
+    {
+        return false;
+    }
+}

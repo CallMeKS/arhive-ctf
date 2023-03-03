@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bceb248e8602db0c5dc615ca3c7e9f94c3a94e39a579ebe28b3fb8f0ca61efc1
-size 712
+enableSecurity()
+
+enables template security
+
+Description
+===========
+
+string
+
+enableSecurity
+
+string
+
+securityclass
+
+string
+
+enableSecurity
+
+object
+
+securityobject
+
+string
+
+enableSecurity
+
+This enables security checking on templates. It uses the following
+parameters:
+
+-   `securityclass` is an optional parameter. It\'s the name of the
+    class with defines the security policy parameters.
+
+-   `securityobject` is an optional parameter. It\'s the object with
+    defines the security policy parameters.
+
+For the details how to setup a security policy see the
+[Security](#advanced.features.security) section.
+
+See also [`disableSecurity()`](#api.disable.security), and
+[Security](#advanced.features.security).

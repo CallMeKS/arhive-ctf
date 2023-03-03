@@ -1,3 +1,1105 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e51f3db1173bbe3fa7cbbed4c48ad49991f7740bf84dffee0ebd6e723e1c436e
-size 43605
+[H[2J[3JThis is Unix or Linux
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                           WAP - Web Application Protection                          *
+*                    Source Code Static Analysis & Data Mining Tool                   *
+*                                     version 2.1                                   *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+    * Collecting the number and type of files to analyse ......................... 
+
+    * Generating AST's ........................................................... 
+
+    * Taint Analysis .............................................................
+      - SQL Injection 
+      - RFI, LFI, DT, SCD, OSCI and PHP code injection 
+      - Cross Site Scripting - XSS 
+
+        (this task can take several minutes, depending the number of files to
+         analyze. So, you can take a coffee or something else :-) )
+
+    * Detecting vulnerabilities and predicting false positives ...................
+
+
+Press enter to view results...
+[0;1m
+
+ PROJECT ANALYSIS: 
+
+  + Global Summary:[0;0m
+     - Project directory: /home/ks/readlyst
+     - Total time: 787 ms
+     - Files: 26
+     - Lines of code: 1919
+
+     - Regular files: 26
+     - Include files: 0
+
+     - Automatic correction: [0;1mno[0;0m
+[0;1m
+
+  + Type of Analysis: SQLI
+     > Summary:[0;0m
+        - Time of analysis: 285 ms
+        - Number of vulnerabilities detected: [0;1m42[0;0m
+           - Real vulnerabilities: [0;1m42[0;0m
+           - False positives: [0;1m0[0;0m
+        - Number of vulnerable files: [0;1m12[0;0m
+        - List of vulnerable files:
+	    /home/ks/readlyst/page/changepasswd.php
+	    /home/ks/readlyst/page/readlyst.php
+	    /home/ks/readlyst/page/likedbooks.php
+	    /home/ks/readlyst/search.php
+	    /home/ks/readlyst/show.php
+	    /home/ks/readlyst/login.php
+	    /home/ks/readlyst/register.php
+	    /home/ks/readlyst/author/page/desc.php
+	    /home/ks/readlyst/author/show.php
+	    /home/ks/readlyst/author/books/update.php
+	    /home/ks/readlyst/author/books/publish.php
+	    /home/ks/readlyst/author/books/delete.php
+
+
+Press enter to view vulnerabilities...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/page/changepasswd.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 66
+        - It is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m1[0;0m
+           - Real Vulnerabilities: [0;1m1[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	16: 	$new_password = $_POST['new_password'];
+	24: 			$hashed_new_password = sha1($new_password);
+	31: 			$sql = "UPDATE users SET password = '$hashed_new_password'".$data." WHERE user_id = $user_id";
+	32: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	16: 	$new_password = $_POST['new_password'];
+	24: 			$hashed_new_password = sha1($new_password);
+	31: 			$sql = "UPDATE users SET password = '".san_sqli(1, $hashed_new_password)."'".$data." WHERE user_id = $user_id";
+	32: 			$result = mysqli_query($conn, $sql);
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/page/readlyst.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 53
+        - It is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m1[0;0m
+           - Real Vulnerabilities: [0;1m1[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	10: 			$sql = "DELETE FROM read_list WHERE user_id = $user_id AND book_id = $book_id";
+	11: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	10: 			$sql = ""DELETE FROM read_list WHERE user_id = $user_id AND book_id = $book_id";
+	11: 			$result = mysqli_query($conn, $sql);
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/page/likedbooks.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 53
+        - It is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m1[0;0m
+           - Real Vulnerabilities: [0;1m1[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	10: 			$sql = "DELETE FROM book_likes WHERE user_id = $user_id AND book_id = $book_id";
+	11: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	10: 			$sql = ""DELETE FROM book_likes WHERE user_id = $user_id AND book_id = $book_id";
+	11: 			$result = mysqli_query($conn, $sql);
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/search.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 71
+        - It is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m2[0;0m
+           - Real Vulnerabilities: [0;1m2[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	20: 	$sql = "SELECT COUNT(*) FROM books JOIN author ON books.author_id = author.author_id JOIN users ON author.user_id = users.user_id where books.title LIKE '%$search%'";
+	21: 	$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	20: 	$sql = ""SELECT COUNT(*) FROM books JOIN author ON books.author_id = author.author_id JOIN users ON author.user_id = users.user_id where books.title LIKE '%$search%'";
+	21: 	$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 2  = = = =
+	Vulnerable code:[0;0m
+	42: 					$sql = "SELECT books.book_id, books.cover, books.title, books.published, author.author_id, users.username FROM books JOIN author ON books.author_id = author.author_id JOIN users ON author.user_id = users.user_id where books.title LIKE '%$search%'";
+	43: 					$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	42: 					$sql = ""SELECT books.book_id, books.cover, books.title, books.published, author.author_id, users.username FROM books JOIN author ON books.author_id = author.author_id JOIN users ON author.user_id = users.user_id where books.title LIKE '%$search%'";
+	43: 					$result = mysqli_query($conn, $sql);
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/show.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 396
+        - It is a include file: no
+        - Included files: none
+        - Defined user functions:
+	  readlyst
+	  likes
+	  countLikes
+	  countComents
+	  isYourComment
+	  yourRating
+	  avgRating
+	  totalRating
+	  isAuthor
+        - Number of Vulnerabilities detected: [0;1m23[0;0m
+           - Real Vulnerabilities: [0;1m23[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	20: 	$sql = "SELECT * FROM books WHERE book_id = $book_id";
+	21: 	$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	20: 	$sql = ""SELECT * FROM books WHERE book_id = $book_id";
+	21: 	$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 2  = = = =
+	Vulnerable code:[0;0m
+	141: 			$sql = "SELECT * FROM book_rating WHERE user_id = $user_id AND book_id = $book_id";
+	142: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	141: 			$sql = ""SELECT * FROM book_rating WHERE user_id = $user_id AND book_id = $book_id";
+	142: 			$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 3  = = = =
+	Vulnerable code:[0;0m
+	140: 			$rating = $_POST['rate'];
+	145: 				$sql = "UPDATE book_rating SET rating = '$rating' WHERE user_id = $user_id AND book_id = $book_id";
+	146: 				$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	140: 			$rating = $_POST['rate'];
+	145: 				$sql = "UPDATE book_rating SET rating = '".san_sqli(1, $rating)."'";
+	146: 				$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 4  = = = =
+	Vulnerable code:[0;0m
+	152: 				$sql = "INSERT INTO book_rating (book_id, user_id, rating) VALUES ($book_id, $user_id, $rating)";
+	153: 				$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	152: 				$sql = ""INSERT INTO book_rating (book_id, user_id, rating) VALUES ($book_id, $user_id, $rating)";
+	153: 				$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 5  = = = =
+	Vulnerable code:[0;0m
+	40: 			$sql = "SELECT * FROM read_list WHERE user_id = $user_id AND book_id = $book_id";
+	41: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	40: 			$sql = ""SELECT * FROM read_list WHERE user_id = $user_id AND book_id = $book_id";
+	41: 			$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 6  = = = =
+	Vulnerable code:[0;0m
+	165: 					$sql = "DELETE FROM read_list WHERE user_id = $user_id AND book_id = $book_id";
+	166: 					$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	165: 					$sql = ""DELETE FROM read_list WHERE user_id = $user_id AND book_id = $book_id";
+	166: 					$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 7  = = = =
+	Vulnerable code:[0;0m
+	172: 					$sql = "INSERT INTO read_list (book_id, user_id) VALUES ($book_id, $user_id)";
+	173: 					$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	172: 					$sql = ""INSERT INTO read_list (book_id, user_id) VALUES ($book_id, $user_id)";
+	173: 					$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 8  = = = =
+	Vulnerable code:[0;0m
+	51: 			$sql = "SELECT * FROM book_likes WHERE user_id = $user_id AND book_id = $book_id";
+	52: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	51: 			$sql = ""SELECT * FROM book_likes WHERE user_id = $user_id AND book_id = $book_id";
+	52: 			$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 9  = = = =
+	Vulnerable code:[0;0m
+	181: 					$sql = "DELETE FROM book_likes WHERE user_id = $user_id AND book_id = $book_id";
+	182: 					$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	181: 					$sql = ""DELETE FROM book_likes WHERE user_id = $user_id AND book_id = $book_id";
+	182: 					$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 10  = = = =
+	Vulnerable code:[0;0m
+	188: 					$sql = "INSERT INTO book_likes (book_id, user_id) VALUES ($book_id, $user_id)";
+	189: 					$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	188: 					$sql = ""INSERT INTO book_likes (book_id, user_id) VALUES ($book_id, $user_id)";
+	189: 					$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 11  = = = =
+	Vulnerable code:[0;0m
+	202: 				$sql = "SELECT * FROM comments WHERE user_id = $user_id AND comment_id = $comment_id";
+	203: 				$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	202: 				$sql = ""SELECT * FROM comments WHERE user_id = $user_id AND comment_id = $comment_id";
+	203: 				$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 12  = = = =
+	Vulnerable code:[0;0m
+	82: 			$sql = "SELECT * FROM comments WHERE user_id = $user_id AND comment_id = $comment_id";
+	83: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	82: 			$sql = ""SELECT * FROM comments WHERE user_id = $user_id AND comment_id = $comment_id";
+	83: 			$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 13  = = = =
+	Vulnerable code:[0;0m
+	213: 							$comment = $_POST['comment'];
+	214: 							$sql = "UPDATE comments SET comment = '$comment', timestamp = NOW() WHERE comment_id = $comment_id";
+	215: 							$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	213: 							$comment = $_POST['comment'];
+	214: 							$sql = "UPDATE comments SET comment = '".san_sqli(1, $comment)."'";
+	215: 							$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 14  = = = =
+	Vulnerable code:[0;0m
+	82: 			$sql = "SELECT * FROM comments WHERE user_id = $user_id AND comment_id = $comment_id";
+	83: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	82: 			$sql = ""SELECT * FROM comments WHERE user_id = $user_id AND comment_id = $comment_id";
+	83: 			$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 15  = = = =
+	Vulnerable code:[0;0m
+	228: 						$sql = "DELETE FROM comments WHERE comment_id = $comment_id";
+	229: 						$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	228: 						$sql = ""DELETE FROM comments WHERE comment_id = $comment_id";
+	229: 						$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 16  = = = =
+	Vulnerable code:[0;0m
+	244: 			$comment = $_POST['comment'];
+	245: 			$sql = "INSERT INTO comments (user_id,book_id,comment) VALUES ($user_id,$book_id,'$comment')";
+	246: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	244: 			$comment = $_POST['comment'];
+	245: 			$sql = "INSERT INTO comments (user_id,book_id,comment) VALUES ($user_id,$book_id,'".san_sqli(1, $comment)."'";
+	246: 			$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 17  = = = =
+	Vulnerable code:[0;0m
+	40: 			$sql = "SELECT * FROM read_list WHERE user_id = $user_id AND book_id = $book_id";
+	41: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	40: 			$sql = ""SELECT * FROM read_list WHERE user_id = $user_id AND book_id = $book_id";
+	41: 			$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 18  = = = =
+	Vulnerable code:[0;0m
+	51: 			$sql = "SELECT * FROM book_likes WHERE user_id = $user_id AND book_id = $book_id";
+	52: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	51: 			$sql = ""SELECT * FROM book_likes WHERE user_id = $user_id AND book_id = $book_id";
+	52: 			$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 19  = = = =
+	Vulnerable code:[0;0m
+	105: 			$sql = "SELECT AVG(rating) FROM book_rating WHERE book_id = $book_id";
+	106: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	105: 			$sql = ""SELECT AVG(rating) FROM book_rating WHERE book_id = $book_id";
+	106: 			$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 20  = = = =
+	Vulnerable code:[0;0m
+	93: 			$sql = "SELECT * FROM book_rating WHERE user_id = $user_id AND book_id = $book_id";
+	94: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	93: 			$sql = ""SELECT * FROM book_rating WHERE user_id = $user_id AND book_id = $book_id";
+	94: 			$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 21  = = = =
+	Vulnerable code:[0;0m
+	19: 	$book_id = $_GET['id'];
+	315: 					$sql = "SELECT comments.comment_id, comments.user_id, users.username, comments.comment, comments.timestamp from comments JOIN users ON comments.user_id = users.user_id WHERE book_id = $book_id ORDER BY comment_id";
+	316: 					$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	19: 	$book_id = $_GET['id'];
+	315: 					$sql = "SELECT comments.comment_id, comments.user_id, users.username, comments.comment, comments.timestamp from comments JOIN users ON comments.user_id = users.user_id WHERE book_id ='".san_sqli(1, $book_id)."'";
+	316: 					$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 22  = = = =
+	Vulnerable code:[0;0m
+	82: 			$sql = "SELECT * FROM comments WHERE user_id = $user_id AND comment_id = $comment_id";
+	83: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	82: 			$sql = ""SELECT * FROM comments WHERE user_id = $user_id AND comment_id = $comment_id";
+	83: 			$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 23  = = = =
+	Vulnerable code:[0;0m
+	19: 	$book_id = $_GET['id'];
+	365: 					$sql = "SELECT r1.book_id, r1.cover, r1.published, r1.title, author.author_id, users.username FROM books AS r1 JOIN author ON r1.author_id = author.author_id JOIN users ON author.user_id = users.user_id JOIN (SELECT CEIL(RAND() * (SELECT MAX(book_id) FROM books)) AS id) AS r2 WHERE r1.published = 1 AND r1.book_id >= r2.id AND r1.book_id <> $book_id ORDER BY r1.book_id ASC LIMIT 3";
+	366: 					$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	19: 	$book_id = $_GET['id'];
+	365: 					$sql = "SELECT r1.book_id, r1.cover, r1.published, r1.title, author.author_id, users.username FROM books AS r1 JOIN author ON r1.author_id = author.author_id JOIN users ON author.user_id = users.user_id JOIN (SELECT CEIL(RAND() * (SELECT MAX(book_id) FROM books)) AS id) AS r2 WHERE r1.published = 1 AND r1.book_id >= r2.id AND r1.book_id <>'".san_sqli(1, $book_id)."'";
+	366: 					$result = mysqli_query($conn, $sql);
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/login.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 59
+        - It is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m1[0;0m
+           - Real Vulnerabilities: [0;1m1[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	15: 	$password = $_POST['password'];
+	25: 		$password_hashed = sha1($password);
+	14: 	$email = $_POST['email'];
+	26: 		$sql = "SELECT * FROM users WHERE email='$email' AND password='$password_hashed'";
+	27: 		$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	15: 	$password = $_POST['password'];
+	25: 		$password_hashed = sha1($password);
+	14: 	$email = $_POST['email'];
+	26: 		$sql = "SELECT * FROM users WHERE email='".san_sqli(1, $email)."' AND password='".san_sqli(1, $password_hashed)."'";
+	27: 		$result = mysqli_query($conn, $sql);
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/register.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 83
+        - It is a include file: no
+        - Included files: none
+        - Defined user functions:
+	  validate
+        - Number of Vulnerabilities detected: [0;1m2[0;0m
+           - Real Vulnerabilities: [0;1m2[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	24: 	$email = validate($_POST['email']);
+	22: 	$username = validate($_POST['username']);
+	39: 		$sql = "SELECT username, email FROM users WHERE username = '$username' OR email = '$email'";
+	40: 		$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	24: 	$email = validate($_POST['email']);
+	22: 	$username = validate($_POST['username']);
+	39: 		$sql = "SELECT username, email FROM users WHERE username = '".san_sqli(1, $username)."' OR email = '".san_sqli(1, $email)."'";
+	40: 		$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 2  = = = =
+	Vulnerable code:[0;0m
+	23: 	$password = validate($_POST['password']);
+	47: 			$password_hashed = sha1($password);				
+	24: 	$email = validate($_POST['email']);
+	22: 	$username = validate($_POST['username']);
+	48: 			$sql = "INSERT INTO users (username, password, email, role) VALUES ('$username', '$password_hashed', '$email', 0)";
+	49: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	23: 	$password = validate($_POST['password']);
+	47: 			$password_hashed = sha1($password);				
+	24: 	$email = validate($_POST['email']);
+	22: 	$username = validate($_POST['username']);
+	48: 			$sql = "INSERT INTO users (username, password, email, role) VALUES ('".san_sqli(1, $username)."', '".san_sqli(1, $password_hashed)."', '".san_sqli(1, $email)."'";
+	49: 			$result = mysqli_query($conn, $sql);
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/author/page/desc.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 39
+        - It is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m1[0;0m
+           - Real Vulnerabilities: [0;1m1[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	13: 		$author_desc = $_POST['author_desc'];
+	14: 		$author_desc = str_replace("'","\'",$author_desc);
+	15: 		$sql = "UPDATE author SET description = '$author_desc' WHERE user_id = $user_id";
+	16: 		$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	13: 		$author_desc = $_POST['author_desc'];
+	14: 		$author_desc = str_replace("'","\'",$author_desc);
+	15: 		$sql = "UPDATE author SET description = '".san_sqli(1, $author_desc)."'";
+	16: 		$result = mysqli_query($conn, $sql);
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/author/show.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 104
+        - It is a include file: no
+        - Included files: none
+        - Defined user functions:
+	  isOwnedByAuthor
+        - Number of Vulnerabilities detected: [0;1m2[0;0m
+           - Real Vulnerabilities: [0;1m2[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	40: 		$sql = "SELECT users.username, author.description FROM users JOIN author ON users.user_id = author.user_id WHERE author.author_id = $author_id";
+	41: 		$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	40: 		$sql = ""SELECT users.username, author.description FROM users JOIN author ON users.user_id = author.user_id WHERE author.author_id = $author_id";
+	41: 		$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 2  = = = =
+	Vulnerable code:[0;0m
+	65: 						$sql = "SELECT * FROM books WHERE author_id = $author_id";
+	66: 						$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	65: 						$sql = ""SELECT * FROM books WHERE author_id = $author_id";
+	66: 						$result = mysqli_query($conn, $sql);
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/author/books/update.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 166
+        - It is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m3[0;0m
+           - Real Vulnerabilities: [0;1m3[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	27: 				$book_id = $_GET['id'];
+	29: 				$sql = "SELECT cover FROM books WHERE book_id = $book_id AND author_id = $author_id";
+	30: 				$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	27: 				$book_id = $_GET['id'];
+	29: 				$sql = "SELECT cover FROM books WHERE book_id ='".san_sqli(1, $book_id)."'";
+	30: 				$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 2  = = = =
+	Vulnerable code:[0;0m
+	41: 					$book_desc = $_POST['book_desc'];
+	40: 					$book_title = $_POST['title'];
+	27: 				$book_id = $_GET['id'];
+	42: 					$sql = "UPDATE books SET title = '$book_title', description = '$book_desc', cover = '$file' WHERE book_id = $book_id AND author_id = $author_id";
+	43: 					$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	41: 					$book_desc = $_POST['book_desc'];
+	40: 					$book_title = $_POST['title'];
+	27: 				$book_id = $_GET['id'];
+	42: 					$sql = "UPDATE books SET title = '".san_sqli(1, $book_title)."', description = '".san_sqli(1, $book_desc)."', cover = '$file' WHERE book_id ='".san_sqli(1, $book_id)."'";
+	43: 					$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 3  = = = =
+	Vulnerable code:[0;0m
+	61: 			$book_id = $_GET['id'];
+	62: 			$sql = "SELECT * FROM books WHERE book_id = $book_id AND author_id = $author_id";
+	63: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	61: 			$book_id = $_GET['id'];
+	62: 			$sql = "SELECT * FROM books WHERE book_id ='".san_sqli(1, $book_id)."'";
+	63: 			$result = mysqli_query($conn, $sql);
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/author/books/publish.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 66
+        - It is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m3[0;0m
+           - Real Vulnerabilities: [0;1m3[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	32: 		$book_id = $_GET['id'];
+	33: 		$sql = "SELECT * FROM books WHERE book_id = $book_id AND author_id = $author_id";
+	34: 		$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	32: 		$book_id = $_GET['id'];
+	33: 		$sql = "SELECT * FROM books WHERE book_id ='".san_sqli(1, $book_id)."'";
+	34: 		$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 2  = = = =
+	Vulnerable code:[0;0m
+	38: 			$sql = "UPDATE books SET published = $publish_status WHERE book_id = $book_id";
+	39: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	38: 			$sql = ""UPDATE books SET published = $publish_status WHERE book_id = $book_id";
+	39: 			$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 3  = = = =
+	Vulnerable code:[0;0m
+	45: 				  $sql = "DELETE FROM $tables[$i] WHERE book_id = $book_id";
+	46: 				  $result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	45: 				  $sql = ""DELETE FROM $tables[$i] WHERE book_id = $book_id";
+	46: 				  $result = mysqli_query($conn, $sql);
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/author/books/delete.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 51
+        - It is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m2[0;0m
+           - Real Vulnerabilities: [0;1m2[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	25: 		$book_id = $_GET['id'];
+	26: 		$sql = "SELECT * FROM books WHERE book_id = $book_id AND author_id = $author_id";
+	27: 		$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	25: 		$book_id = $_GET['id'];
+	26: 		$sql = "SELECT * FROM books WHERE book_id ='".san_sqli(1, $book_id)."'";
+	27: 		$result = mysqli_query($conn, $sql);
+
+[0;1m
+	= = = =  Vulnerability n.: 2  = = = =
+	Vulnerable code:[0;0m
+	25: 		$book_id = $_GET['id'];
+	32: 			$sql = "DELETE FROM books WHERE book_id = $book_id AND author_id = $author_id";
+	33: 			$result = mysqli_query($conn, $sql);
+[0;1m
+	Corrected code:[0;0m
+	25: 		$book_id = $_GET['id'];
+	32: 			$sql = "DELETE FROM books WHERE book_id ='".san_sqli(1, $book_id)."'";
+	33: 			$result = mysqli_query($conn, $sql);
+
+[0;1m
+
++ + + Type of Analysis: XSS
+     > Summary:[0;0m
+        - Time of analysis: 141 ms
+        - Number of vulnerabilities detected: [0;1m18[0;0m
+           - Real vulnerabilities: [0;1m18[0;0m
+           - False positives: [0;1m0[0;0m
+        - Number of vulnerable files: [0;1m7[0;0m
+        - List of vulnerable files:
+	    /home/ks/readlyst/includes/header.php
+	    /home/ks/readlyst/includes/alert.php
+	    /home/ks/readlyst/page/changepasswd.php
+	    /home/ks/readlyst/search.php
+	    /home/ks/readlyst/show.php
+	    /home/ks/readlyst/author/show.php
+	    /home/ks/readlyst/author/books/update.php
+
+
+Press enter to view vulnerabilities...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/includes/header.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 75
+        - Is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m2[0;0m
+           - Real Vulnerabilities: [0;1m2[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	19: 						$username = $_SESSION['username']; ?>
+	21: 						<img class="rounded-circle img-fluid" style="height:38px;" src="/avatar.php?name=<?php echo $username; ?>">
+[0;1m
+	Corrected code:[0;0m
+	19: 						$username = san_out($_SESSION['username']); ?>
+	21: 						<img class="rounded-circle img-fluid" style="height:38px;" src="/avatar.php?name=<?php echo $username; ?>">
+
+[0;1m
+	= = = =  Vulnerability n.: 2  = = = =
+	Vulnerable code:[0;0m
+	19: 						$username = $_SESSION['username']; ?>
+	24: 							<?php echo $username; ?>
+[0;1m
+	Corrected code:[0;0m
+	19: 						$username = san_out($_SESSION['username']); ?>
+	24: 							<?php echo $username; ?>
+
+
+
+Press enterGlobalDataSqli to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/includes/alert.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 18
+        - Is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m1[0;0m
+           - Real Vulnerabilities: [0;1m1[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	13: 		echo $_SESSION['message']; 
+[0;1m
+	Corrected code:[0;0m
+	13: 		echo san_out($_SESSION['message']); 
+
+
+
+Press enterGlobalDataSqli to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/page/changepasswd.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 66
+        - Is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m1[0;0m
+           - Real Vulnerabilities: [0;1m1[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	12: 	$email = $_SESSION['email'];
+	46: 			<input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" disabled value="<?php echo $email; ?>">
+[0;1m
+	Corrected code:[0;0m
+	12: 	$email = san_out($_SESSION['email']);
+	46: 			<input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" disabled value="<?php echo $email; ?>">
+
+
+
+Press enterGlobalDataSqli to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/search.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 71
+        - Is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m1[0;0m
+           - Real Vulnerabilities: [0;1m1[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	34: 				<p class="col-md-8 fs-4"><?php echo $_GET['s'];?></p>
+[0;1m
+	Corrected code:[0;0m
+	34: 				<p class="col-md-8 fs-4"><?php echo san_out($_GET['s']);?></p>
+
+
+
+Press enterGlobalDataSqli to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/show.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 396
+        - Is a include file: no
+        - Included files: none
+        - Defined user functions:
+	  readlyst
+	  likes
+	  countLikes
+	  countComents
+	  isYourComment
+	  yourRating
+	  avgRating
+	  totalRating
+	  isAuthor
+        - Number of Vulnerabilities detected: [0;1m9[0;0m
+           - Real Vulnerabilities: [0;1m9[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	19: 	$book_id = $_GET['id'];
+	264: 								<a href="/show.php?id=<?php echo $book_id; ?>&action=readlyst" style="font-size: .875em !important" class="flex-fill btn btn-outline-light <?php if (readlyst($conn, $user_id, $book_id)) {?>active">Added to ReadLyst</a><?php } else {?>">Add to ReadLyst</a><?php }?>
+[0;1m
+	Corrected code:[0;0m
+	19: 	$book_id = san_out($_GET['id']);
+	264: 								<a href="/show.php?id=<?php echo $book_id; ?>&action=readlyst" style="font-size: .875em !important" class="flex-fill btn btn-outline-light <?php if (readlyst($conn, $user_id, $book_id)) {?>active">Added to ReadLyst</a><?php } else {?>">Add to ReadLyst</a><?php }?>
+
+[0;1m
+	= = = =  Vulnerability n.: 2  = = = =
+	Vulnerable code:[0;0m
+	19: 	$book_id = $_GET['id'];
+	265: 								<a href="/show.php?id=<?php echo $book_id; ?>&action=likes" style="font-size: .875em !important" class="ms-1 btn btn-outline-light <?php if (likes($conn, $user_id, $book_id)) {?> active"><i class="bi bi-hand-thumbs-up-fill text-info"></i></a><?php } else {?>"><i class="bi bi-hand-thumbs-up"></i></a><?php }?>
+[0;1m
+	Corrected code:[0;0m
+	19: 	$book_id = san_out($_GET['id']);
+	265: 								<a href="/show.php?id=<?php echo $book_id; ?>&action=likes" style="font-size: .875em !important" class="ms-1 btn btn-outline-light <?php if (likes($conn, $user_id, $book_id)) {?> active"><i class="bi bi-hand-thumbs-up-fill text-info"></i></a><?php } else {?>"><i class="bi bi-hand-thumbs-up"></i></a><?php }?>
+
+[0;1m
+	= = = =  Vulnerability n.: 3  = = = =
+	Vulnerable code:[0;0m
+	19: 	$book_id = $_GET['id'];
+	289: 							<small style="line-height: 2.5;"><?php echo totalRating($conn, $book_id); ?> Ratings</small>
+[0;1m
+	Corrected code:[0;0m
+	19: 	$book_id = san_out($_GET['id']);
+	289: 							<small style="line-height: 2.5;"><?php echo totalRating($conn, $book_id); ?> Ratings</small>
+
+[0;1m
+	= = = =  Vulnerability n.: 4  = = = =
+	Vulnerable code:[0;0m
+	19: 	$book_id = $_GET['id'];
+	14: 	$user_id = $_SESSION['id'];
+	291: 									<small class="ms-1" style="line-height: 2.5;">(You rated <?php echo yourRating($conn, $user_id, $book_id); ?> stars)</small>
+[0;1m
+	Corrected code:[0;0m
+	19: 	$book_id = san_out($_GET['id']);
+	14: 	$user_id = san_out($_SESSION['id']);
+	291: 									<small class="ms-1" style="line-height: 2.5;">(You rated <?php echo yourRating($conn, $user_id, $book_id); ?> stars)</small>
+
+[0;1m
+	= = = =  Vulnerability n.: 5  = = = =
+	Vulnerable code:[0;0m
+	19: 	$book_id = $_GET['id'];
+	294: 								<i class="bi bi-hand-thumbs-up-fill"></i> <?php echo countLikes($conn, $book_id); ?> likes
+[0;1m
+	Corrected code:[0;0m
+	19: 	$book_id = san_out($_GET['id']);
+	294: 								<i class="bi bi-hand-thumbs-up-fill"></i> <?php echo countLikes($conn, $book_id); ?> likes
+
+[0;1m
+	= = = =  Vulnerability n.: 6  = = = =
+	Vulnerable code:[0;0m
+	19: 	$book_id = $_GET['id'];
+	304: 				<h4 class="mb-4">Community Reviews <?php echo "(" . countComents($conn, $book_id) . ")"; ?></h4>
+[0;1m
+	Corrected code:[0;0m
+	19: 	$book_id = san_out($_GET['id']);
+	304: 				<h4 class="mb-4">Community Reviews <?php echo "(" . countComents($conn, san_out($book_id)) . ")"; ?></h4>
+
+[0;1m
+	= = = =  Vulnerability n.: 7  = = = =
+	Vulnerable code:[0;0m
+	244: 			$comment = $_POST['comment'];
+	307: 						<textarea class="form-control" name="comment" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"><?php if (isset($comment)) {echo $comment;}?></textarea>
+[0;1m
+	Corrected code:[0;0m
+	244: 			$comment = san_out($_POST['comment']);
+	307: 						<textarea class="form-control" name="comment" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"><?php if (isset($comment)) {echo $comment;}?></textarea>
+
+[0;1m
+	= = = =  Vulnerability n.: 8  = = = =
+	Vulnerable code:[0;0m
+	19: 	$book_id = $_GET['id'];
+	347: 									<a href="?id=<?php echo $book_id; ?>&cid=<?php echo $comment_id; ?>&c_action=edit" class="btn btn-outline-secondary">Edit</a>
+[0;1m
+	Corrected code:[0;0m
+	19: 	$book_id = san_out($_GET['id']);
+	347: 									<a href="?id=<?php echo $book_id; ?>&cid=<?php echo $comment_id; ?>&c_action=edit" class="btn btn-outline-secondary">Edit</a>
+
+[0;1m
+	= = = =  Vulnerability n.: 9  = = = =
+	Vulnerable code:[0;0m
+	19: 	$book_id = $_GET['id'];
+	348: 									<a href="?id=<?php echo $book_id; ?>&cid=<?php echo $comment_id; ?>&c_action=delete" class="btn btn-outline-danger">Delete</a>
+[0;1m
+	Corrected code:[0;0m
+	19: 	$book_id = san_out($_GET['id']);
+	348: 									<a href="?id=<?php echo $book_id; ?>&cid=<?php echo $comment_id; ?>&c_action=delete" class="btn btn-outline-danger">Delete</a>
+
+
+
+Press enterGlobalDataSqli to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/author/show.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 104
+        - Is a include file: no
+        - Included files: none
+        - Defined user functions:
+	  isOwnedByAuthor
+        - Number of Vulnerabilities detected: [0;1m1[0;0m
+           - Real Vulnerabilities: [0;1m1[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	39: 		$author_id = $_GET['id'];
+	75: 											<h6 class="card-subtitle mb-2">By <a class="text-muted" href="/author/show.php?id=<?php echo $author_id; ?>"><?php echo $author_name; ?></a></h6>
+[0;1m
+	Corrected code:[0;0m
+	39: 		$author_id = san_out($_GET['id']);
+	75: 											<h6 class="card-subtitle mb-2">By <a class="text-muted" href="/author/show.php?id=<?php echo $author_id; ?>"><?php echo $author_name; ?></a></h6>
+
+
+
+Press enterGlobalDataSqli to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/author/books/update.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 166
+        - Is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m3[0;0m
+           - Real Vulnerabilities: [0;1m3[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Vulnerable code:[0;0m
+	61: 			$book_id = $_GET['id'];
+	106: 							<a href="/author/books/publish.php?id=<?php echo $book_id; ?>" type="button" class="ms-3 btn col-3 btn-outline-success">Publish book</a>
+[0;1m
+	Corrected code:[0;0m
+	61: 			$book_id = san_out($_GET['id']);
+	106: 							<a href="/author/books/publish.php?id=<?php echo $book_id; ?>" type="button" class="ms-3 btn col-3 btn-outline-success">Publish book</a>
+
+[0;1m
+	= = = =  Vulnerability n.: 2  = = = =
+	Vulnerable code:[0;0m
+	61: 			$book_id = $_GET['id'];
+	131: 				<a href="/author/books/delete.php?id=<?php echo $book_id; ?>" type="button" class="btn btn-danger">Delete</a>
+[0;1m
+	Corrected code:[0;0m
+	61: 			$book_id = san_out($_GET['id']);
+	131: 				<a href="/author/books/delete.php?id=<?php echo $book_id; ?>" type="button" class="btn btn-danger">Delete</a>
+
+[0;1m
+	= = = =  Vulnerability n.: 3  = = = =
+	Vulnerable code:[0;0m
+	61: 			$book_id = $_GET['id'];
+	150: 				<a href="/author/books/publish.php?id=<?php echo $book_id; ?>&unpublish=true" type="button" class="btn btn-danger">Unpublish</a>
+[0;1m
+	Corrected code:[0;0m
+	61: 			$book_id = san_out($_GET['id']);
+	150: 				<a href="/author/books/publish.php?id=<?php echo $book_id; ?>&unpublish=true" type="button" class="btn btn-danger">Unpublish</a>
+
+[0;1m
+
+  + Type of Analysis: RFI/LFI/DT/SCD/OS/Eval
+	     > Summary:[0;0m
+        - Time of analyse: 106 ms
+        - Number of vulnerabilities detected: [0;1m4[0;0m
+           - Real vulnerabilities: [0;1m3[0;0m
+           - False positives: [0;1m1[0;0m
+        - Number of vulnerable files: [0;1m4[0;0m
+        - List of vulnerable files:
+	    /home/ks/readlyst/profile.php
+	    /home/ks/readlyst/author/page/add.php
+	    /home/ks/readlyst/author/index.php
+	    /home/ks/readlyst/author/books/update.php
+
+
+Press enter to view vulnerabilities...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/profile.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 79
+        - Is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m1[0;0m
+           - Real Vulnerabilities: [0;1m0[0;0m
+           - False positives: [0;1m1[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1   >>> is a possible False Positive <<<  = = = =
+	Type: PHP Code Injection[0;0m
+[0;1m
+	Vulnerable code:[0;0m
+	47: 										$page = preg_replace('/\.\.\//',"",$_GET['p']);
+
+[0;1m
+	False Positive justification:[0;0m
+	47: preg_replace, concatenation
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/author/page/add.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 78
+        - Is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m1[0;0m
+           - Real Vulnerabilities: [0;1m1[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Type: RFI, LFI, DT[0;0m
+[0;1m
+	Vulnerable code:[0;0m
+	23: if(move_uploaded_file($_FILES['cover']['tmp_name'], $dir . $file)) { $book_title = $_POST['title'];
+
+[0;1m	Corrected code:[0;0m
+	23: if (san_mix($_FILES['cover']['tmp_name'], 'move_uploaded_file', null) == 0)
+	24:	if(move_uploaded_file($_FILES['cover']['tmp_name'], $dir . $file)) { $book_title = $_POST['title'];
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/author/index.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 95
+        - Is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m1[0;0m
+           - Real Vulnerabilities: [0;1m1[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Type: RFI, LFI, DT[0;0m
+[0;1m
+	Vulnerable code:[0;0m
+	40: 							include BASE_PATH . "/author/page/" . $_GET['p'] . ".php";
+
+[0;1m	Corrected code:[0;0m
+	40: if (san_mix("$_SERVER[DOCUMENT_ROOT]/author/page/$_GET['p'].php", 'include', null) == 0)
+	41:								include BASE_PATH . "/author/page/" . $_GET['p'] . ".php";
+
+
+
+Press enter to view vulnerabilities of next file...
+[0;1m
+> > > >  File: [0;0m/home/ks/readlyst/author/books/update.php[0;1m < < < <[0;0m
+[0;1m     > Information:[0;0m
+        - Number of Lines of Code: 166
+        - Is a include file: no
+        - Included files: none
+        - Defined user function: none
+        - Number of Vulnerabilities detected: [0;1m1[0;0m
+           - Real Vulnerabilities: [0;1m1[0;0m
+           - False positives: [0;1m0[0;0m
+[0;1m
+	= = = =  Vulnerability n.: 1  = = = =
+	Type: RFI, LFI, DT[0;0m
+[0;1m
+	Vulnerable code:[0;0m
+	39: if(move_uploaded_file($_FILES['cover']['tmp_name'], $dir . $file)) { $book_title = $_POST['title'];
+
+[0;1m	Corrected code:[0;0m
+	39: if (san_mix($_FILES['cover']['tmp_name'], 'move_uploaded_file', null) == 0)
+	40:	if(move_uploaded_file($_FILES['cover']['tmp_name'], $dir . $file)) { $book_title = $_POST['title'];
+

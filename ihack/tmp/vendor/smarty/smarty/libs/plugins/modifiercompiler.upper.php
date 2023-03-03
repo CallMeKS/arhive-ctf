@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5039ebd44dbadbf4c626b7cec14543dbcec33152b6170b8fd64fa77e959f522e
-size 695
+<?php
+/**
+ * Smarty plugin
+ *
+ * @package    Smarty
+ * @subpackage PluginsModifierCompiler
+ */
+/**
+ * Smarty upper modifier plugin
+ * Type:     modifier
+ * Name:     lower
+ * Purpose:  convert string to uppercase
+ *
+ * @link   https://www.smarty.net/manual/en/language.modifier.upper.php lower (Smarty online manual)
+ * @author Uwe Tews
+ *
+ * @param array $params parameters
+ *
+ * @return string with compiled code
+ */
+function smarty_modifiercompiler_upper($params)
+{
+    if (Smarty::$_MBSTRING) {
+        return 'mb_strtoupper(' . $params[ 0 ] . ' ?? \'\', \'' . addslashes(Smarty::$_CHARSET) . '\')';
+    }
+    // no MBString fallback
+    return 'strtoupper(' . $params[ 0 ] . ' ?? \'\')';
+}

@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b02f65b02445e232e6660fd724edf92ffef5a0c2e2de07d242c8879c0c6b57a8
-size 1000
+<?php
+/**
+ * Smarty plugin
+ *
+ * @package    Smarty
+ * @subpackage PluginsModifier
+ */
+/**
+ * Smarty replace modifier plugin
+ * Type:     modifier
+ * Name:     replace
+ * Purpose:  simple search/replace
+ *
+ * @link   https://www.smarty.net/manual/en/language.modifier.replace.php replace (Smarty online manual)
+ * @author Monte Ohrt <monte at ohrt dot com>
+ * @author Uwe Tews
+ *
+ * @param string $string  input string
+ * @param string $search  text to search for
+ * @param string $replace replacement text
+ *
+ * @return string
+ */
+function smarty_modifier_replace($string, $search, $replace)
+{
+    static $is_loaded = false;
+    if (Smarty::$_MBSTRING) {
+        if (!$is_loaded) {
+            if (!is_callable('smarty_mb_str_replace')) {
+                include_once SMARTY_PLUGINS_DIR . 'shared.mb_str_replace.php';
+            }
+            $is_loaded = true;
+        }
+        return smarty_mb_str_replace($search, $replace, $string);
+    }
+    return str_replace($search, $replace, $string);
+}

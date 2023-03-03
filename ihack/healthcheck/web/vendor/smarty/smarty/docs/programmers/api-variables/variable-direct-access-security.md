@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0e284c35a5accce5da5dc83389eb17abf98d0d76e2e37e7f588ee61f8812429c
-size 412
+\$direct\_access\_security {#variable.direct.access.security}
+==========================
+
+Direct access security inhibits direct browser access to compiled or
+cached template files.
+
+Direct access security is enabled by default. To disable it set
+`$direct_access_security` to FALSE.
+
+> **Note**
+>
+> This is a compile time option. If you change the setting you must make
+> sure that the templates get recompiled.

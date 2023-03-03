@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1f0b637108747eca9a8082eb1ba1aa9c12444b8325a426db8bb9befd683da589
-size 4389
+#part 1
+
+
+$pOAIUHF = "Lorem ipsum dolor sit amet non id ad aliqua eiusmod nisi. Consectetur nisi fugiat qui dolor laborum in elit mollit anim officia nisi officia nulla dolore. Laboris ut ea proident duis est velit pariatur, irure in proident ad officia voluptate dolore nisi esse consectetur. Sit amet labore velit aliqua incididunt voluptate dolor ut excepteur ipsum esse irure et Lorem officia et ullamco ad reprehenderit dolor. Cupidatat ex nisi ad anim nulla anim ea et exercitation. Irure quis mollit do laborum irure nisi officia dolore ex duis consectetur."
+
+
+$pojNF = "1\ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 2\ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 3\ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 4\ Excepteur: sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+
+$oAIUsd = ".murobal tse di mina tillom tnuresed aiciffo iuq apluc ni tnus ,tnediorp non tatadipuc taceacco tnis :ruetpecxE \4 .rutairap allun taiguf ue erolod mullic esse tilev etatpulov ni tiredneherper ni rolod eruri etua siuD \3 .tauqesnoc odommoc ae xe piuqila tu isin sirobal ocmallu noitaticrexe durtson siuq ,mainev minim da mine tU \2 .auqila angam erolod te erobal tu tnudidicni ropmet domsuie od des ,tile gnicsipida rutetcesnoc ,tema tis rolod muspi meroL \1"
+
+
+$oIUAHSD = "6Tv3Xgkxm6kwYiHSsk2HkfhTLV84g3ZeQohi94YZmq3bUEwTN8wG2kTTjUroFZLQhPFWV99M6DkLXuc54khtkyctcCBprPqW3FjBVr1Bf47SXpJYpLFds1nhpCEjxp6Rcj8pCJT1zzgcYwkoykcBdhWfVCwgqUSBbr4fKHWmAXtbK6F"
+
+
+$KJUHSDFG = "Vm0wd2QyUXlVWGxXYTFwUFZsZG9WRll3WkRSV01WbDNXa2M1VjJKR2JETlhhMk0xVmpGYWMySkVUbGhoTWsweFZtcEJlRmRIVmtsaVJtaG9UVmhDVVZadGNFZFpWMUpJVm10V1VtSlZXbFJXYlhoelRURmFkRTFZY0d4U2JWSkpWbTEwYzJGc1NuUmhSemxWVmpOT00xcFZXbUZrUjFKSFYyMTRVMkpIZHpCV01uUnZVakZXZEZOc1dsaGlSMmhZV1d4b2IwMHhjRmRYYlhSWFRWWmFlVmRyV25kV01ERldZMFZ3VjJKVVJYZFdha1pYWkVaT2NscEdhR2xoTUhCWVYxZDRiMkl4V1hoalJscFlZbFZhY2xWcVJrdFRWbkJHVjJzNWFGWnNjSHBaTUZwM1ZqSktWVkpZWkZoV2JWSklXWHBHVDJSV1ZuTlhiV3hUWVROQ2IxWXhaREJoTVZWNVZXNU9WbUpIYUhOVmFrNVRWMFpTVjFkdVpFNVNiRm93V2xWYVQxWlhTbFpYVkVwV1lrWktSRlpxUm1GU2JVVjZZVVprVjFKV2NGUlhiRlpoWVRKU1YxVnVUbWhTTW5oVVdWUk9RMlJzV25STldHUlZUVlpXTlZWdGRHdFhSbVJJWVVac1dtSkhhRlJaTVZwVFZqRndSMVJyTlZOaVJtOTNWa1phVTFFeFdsaFRhMlJxVWtWYVYxWnFUa05oUmxsM1YyeHdiR0pGV25wVlYzaDNZa2RGZUdORVdsZGlXRUpJVmtSS1RtVkdaSFZVYlVaVFRXNW9kbGRzWkRSWlYwbDRWMjVTYWxKVk5YQlVWbFpYVGtaa2NsWnRkRmhTTUhCNlZUSTFUMVp0U2xsaFJFNWFaV3RhV0ZwRlpGZFRWbkJJWlVkc1UySnJTa3RXTW5oWFZqQXhSMWRzYUZSaE1YQnhWV3hrVTFkR1VsaE9WazVyWWtac00xWXllSGRpUjBwSFYyNXdXbFpXY0ROWlZXUkdaVWRPUlZkc1pHbFhSVXBKVm14U1MxUXlUWGxVYTFwaFVqSm9WRlJYTVc5bGJHUllaVWM1YVUxWFVucFdNV2h2VjBkS1dWVnJPVlpoYTFwSVZHeGFZVmRIVmtoa1IyaHBVbGhDV1ZacVNqUlZNV1IwVWxob1YxZEhhRmhVVlZwM1pXeHJlV1ZIZEd0V2JrSklWMnRrYzFVeVNrbFJiVVpYVFc1b1dGWnFTa1psUm1SWllrWlNhRTFzU25oV1YzaGhaREZaZUZkdVVteFNXRkpZVkZaYVlWTkdWbk5WYms1V1ZteGFWbFJWVW5KUVVUMDk="
+
+
+
+#part 2
+
+
+$CBOIAE = "5ef61b5773ea75ceb6ef8766a206758a000a5a8f0a19c21516976e0fecf43919f98e161d612583b5fd18c19192eb2989695d94d32f7d293c70853a7c11842858"
+
+
+$JHABFDVokjhabf = "Vm0wd2QyUXlWa1pOVldoVFYwZDRWVll3WkRSV2JHeFZVMjA1VjJKSGVGbGFWV1JIVm1zeFdHVkVRbUZTVmxsM1dWZDRZV1JXUm5OaFJtUnBWMFpKZWxkV1VrSmxSbVJJVm10a1lWSnRhRzlVVm1oRFlqRlplRmRzV214U2JWSllWVzAxUjFWdFNsWlhiR2hYWVd0YVRGUlhlRnBsUm1SMFpFWmtUbFp1UWpaV2Fra3hWVEZXUjFkdVRsUmlSMmhoVmpCb1ExZEdWWGRYYkhCc1ZqQTFSMWRyV2xkVWJVcEdZMFpzVjJGcmEzaFdha3BIWXpGT1dXTkdXbWxTVkZaWFZtMTRZVmxWTUhoVmJrNVlZbGhTV0ZSV1pGTk5SbkJHVjIxR1ZXSlZWalJXTVZKSFZqRmFObEpVUWxwaGExcFRXbFZhYTJOV1pITmFSMmhzWWtad1dWWnRNVEJXTVUxNFZXdGthbEpYVWxsWmJYTXhZMVphZEdONlJsZGlSbkF3VkZaak5WWlhTa1ppUkZwYVZsWlpkMVpxU2t0VFJsSlpZVVp3YkdFelFrMVdWM0JIV1Zaa1YyTkZaRlppUjJoVVZGWldkMkl4V25STlZGSm9UVlpLZVZSV1dtdFdiVXBJVld4c1dtSllhRE5aZWtaaFpFVXhSVlpyT1ZkaVZrbDRWMWR3VDJFeFZsZFdiRlpPVWtkek9RPT0="
+
+
+$iaUHFdfb = "5f6d2ab84ca834988e0de45825e48a01379eb99d8853456f13d16b93f05997af4dd21ccb6ee726f3fe121aff741fb0884f7723f93ecddf62ce4711030879f618"
+
+
+
+
+#result
+
+
+$oisdufo234s = $JHABFDVokjhabf.substring(149,2)+$KJUHSDFG.substring(248,2)+$pojNF.substring(334,2)+"r"+$JHABFDVokjhabf.substring(324,2)+" = "+$KJUHSDFG.substring(486,2)+$JHABFDVokjhabf[317]+$KJUHSDFG[31]+"-"+$KJUHSDFG[946]+$oAIUsd[457]+$JHABFDVokjhabf.substring(420,2)+$JHABFDVokjhabf[303]+"-"

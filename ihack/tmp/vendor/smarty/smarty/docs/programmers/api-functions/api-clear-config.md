@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d0a9b819229690bf99380ca9553fa8ba46436588fe0bbd345f56964acb287795
-size 669
+clearConfig()
+
+clears assigned config variables
+
+Description
+===========
+
+void
+
+clearConfig
+
+string
+
+var
+
+This clears all assigned [config variables](#language.config.variables).
+If a variable name is supplied, only that variable is cleared.
+
+
+    <?php
+    // clear all assigned config variables.
+    $smarty->clearConfig();
+
+    // clear one variable
+    $smarty->clearConfig('foobar');
+    ?>
+
+       
+
+See also [`getConfigVars()`](#api.get.config.vars),
+[`config variables`](#language.config.variables),
+[`config files`](#config.files),
+[`{config_load}`](#language.function.config.load),
+[`configLoad()`](#api.config.load) and
+[`clearAssign()`](#api.clear.assign).

@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:627f8e3ee77f969034c7102865be83586d7caa201336e215adec44a4978c1259
-size 273
+unregisterFilter()
+
+dynamically unregister a filter
+
+Description
+===========
+
+void
+
+unregisterFilter
+
+string
+
+type
+
+string\|array
+
+callback
+
+Use this to dynamically unregister filters. It uses the following
+parameters:
+
+See also [`registerFilter()`](#api.register.filter).

@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fe9bafa268759dd0d2ca6f1ec404e4042d262bda7a37683253e32ba96ed9d335
-size 1075
+<?php
+
+/**
+ * Smarty Method UnregisterCacheResource
+ *
+ * Smarty::unregisterCacheResource() method
+ *
+ * @package    Smarty
+ * @subpackage PluginsInternal
+ * @author     Uwe Tews
+ */
+class Smarty_Internal_Method_UnregisterCacheResource
+{
+    /**
+     * Valid for Smarty and template object
+     *
+     * @var int
+     */
+    public $objMap = 3;
+
+    /**
+     * Registers a resource to fetch a template
+     *
+     * @api  Smarty::unregisterCacheResource()
+     * @link https://www.smarty.net/docs/en/api.unregister.cacheresource.tpl
+     *
+     * @param \Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty $obj
+     * @param                                                                 $name
+     *
+     * @return \Smarty|\Smarty_Internal_Template
+     */
+    public function unregisterCacheResource(Smarty_Internal_TemplateBase $obj, $name)
+    {
+        $smarty = $obj->_getSmartyObj();
+        if (isset($smarty->registered_cache_resources[ $name ])) {
+            unset($smarty->registered_cache_resources[ $name ]);
+        }
+        return $obj;
+    }
+}

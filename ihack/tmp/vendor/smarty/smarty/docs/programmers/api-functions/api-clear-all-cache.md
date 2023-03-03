@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a69ef3b5bd5faf908a0cecf1818f6837f72f219323109d19238c644914b29508
-size 716
+clearAllCache()
+
+clears the entire template cache
+
+Description
+===========
+
+void
+
+clearAllCache
+
+int
+
+expire\_time
+
+As an optional parameter, you can supply a minimum age in seconds the
+cache files must be before they will get cleared.
+
+> **Note**
+>
+> Since Smarty version 3.1.14 it is possible to delete cache files by
+> their individual expiration time at creation by passing constant
+> SMARTY::CLEAR\_EXPIRED as `expire_time` parameter.
+
+
+    <?php
+    // clear the entire cache
+    $smarty->clearAllCache();
+
+    // clears all files over one hour old
+    $smarty->clearAllCache(3600);
+    ?>
+
+       
+
+See also [`clearCache()`](#api.clear.cache),
+[`isCached()`](#api.is.cached) and the [caching](#caching) page.

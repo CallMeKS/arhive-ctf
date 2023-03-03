@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7a7eb7234e7d9550ec68af38a5f4a96454e9390660297cea9b1106921f8f8c29
-size 583
+<?php
+/**
+ * This file is part of Smarty.
+ *
+ * (c) 2015 Uwe Tews
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Smarty Internal Plugin Compile Block Parent Class
+ *
+ * @author Uwe Tews <uwe.tews@googlemail.com>
+ */
+class Smarty_Internal_Compile_Block_Parent extends Smarty_Internal_Compile_Child
+{
+    /**
+     * Tag name
+     *
+     * @var string
+     */
+    public $tag = 'block_parent';
+
+    /**
+     * Block type
+     *
+     * @var string
+     */
+    public $blockType = 'Parent';
+}

@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e2fb20d880346d373a1c3788de1daabb9f7e6d96f9b6025ca4e9eacaf73050de
-size 434
+# Nmap 7.93 scan initiated Wed Jan  4 19:00:28 2023 as: nmap -vvv -p 22,80 -A -oA 192.168.22.100 192.168.22.100
+# Ports scanned: TCP(2;22,80) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 192.168.22.100 ()	Status: Up
+Host: 192.168.22.100 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)/, 80/open/tcp//http//Gunicorn 19.7.0/
+# Nmap done at Wed Jan  4 19:00:36 2023 -- 1 IP address (1 host up) scanned in 7.63 seconds

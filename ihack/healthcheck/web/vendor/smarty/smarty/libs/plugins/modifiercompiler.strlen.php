@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d5b2e6ebc0c5d8605d53ec59e2da1b82fbcf91bef080291de862c3bf57e76210
-size 516
+<?php
+
+/**
+ * Smarty plugin
+ *
+ * @package    Smarty
+ * @subpackage PluginsModifierCompiler
+ */
+/**
+ * Smarty strlen modifier plugin
+ * Type:     modifier
+ * Name:     strlen
+ * Purpose:  return the length of the given string
+ *
+ * @link   https://www.smarty.net/docs/en/language.modifier.strlen.tpl strlen (Smarty online manual)
+  *
+ * @param array $params parameters
+ *
+ * @return string with compiled code
+ */
+function smarty_modifiercompiler_strlen($params) {
+    return 'strlen((string) ' . $params[0] . ')';
+}

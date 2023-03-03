@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cc44512fbf8f7b9855a4fe413113d8acd5ea862e7d5314ba5f4700ddbebd1c4f
-size 108
+{
+    "require": {
+        "smarty/smarty": "^4.3",
+        "brainfoolong/cryptojs-aes-php": "^2.1"
+    }
+}

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ff0b243e69b830a7ed482e0809ba6670feb300e4cd607a8d62412d2dec244a15
-size 556
+POST /index.php HTTP/1.1
+Host: 176.32.76.86
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 30
+Origin: http://176.32.76.86
+DNT: 1
+Connection: close
+Referer: http://176.32.76.86/index.php
+Cookie: PHPSESSID=f261bac77638aa54dcb11d9f99bcfe12
+Upgrade-Insecure-Requests: 1
+
+username=admin&password=123456

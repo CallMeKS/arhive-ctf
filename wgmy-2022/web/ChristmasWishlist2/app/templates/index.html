@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:768358303374673268af00b01ed4c0c3ae5281f61c3d92e6645c5163427bffe0
-size 793
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+  <script src="static/dropzone.js"></script> 
+  <title>Christmas Wishlist</title>
+</head>
+
+<style>
+  .text {
+    font-family: 'Mountains of Christmas', cursive;
+  }
+  form{
+    font-size: 20px;
+    font-family: 'Mountains of Christmas', cursive;
+  }
+</style>
+
+<body background="static/paper.jpg" style = "margin-left:25px; margin-top:25px;">
+  <p class="text" style="font-size: 60px">Submit Your Christmas Wishlist!</p>
+  <form action="/"
+    class="dropzone col-xl-10"
+    id="wishlist-dropzone">
+  </form>
+  <div id="result" style="margin-top:24px;">
+  </div>
+</body>
+</html>

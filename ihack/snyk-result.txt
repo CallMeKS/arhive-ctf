@@ -1,3 +1,348 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bcd847e901401f60b272a1566d0856ac93c02990a3d9ef7fe45f5016923dd783
-size 19538
+snyk code test                                                
+
+Testing /home/ks/readlyst ...
+
+ ✗ [Medium] Use of Hardcoded Credentials 
+   Path: includes/config.php, line 8 
+   Info: Do not hardcode credentials in code. Found a hardcoded credential used in mysqli_connect.
+
+ ✗ [Medium] Sensitive Cookie in HTTPS Session Without 'Secure' Attribute 
+   Path: logout.php, line 8 
+   Info: setcookie misses the Secure attribute (it is false by default). Set it to true to protect the cookie from man-in-the-middle attacks.
+
+ ✗ [Medium] Open Redirect 
+   Path: author/books/update.php, line 50 
+   Info: Unsanitized input from an HTTP parameter flows into header, where it is used as an URL to redirect the user. This may result in an Open Redirect vulnerability.
+
+ ✗ [Medium] Open Redirect 
+   Path: show.php, line 149 
+   Info: Unsanitized input from an HTTP parameter flows into header, where it is used as an URL to redirect the user. This may result in an Open Redirect vulnerability.
+
+ ✗ [Medium] Open Redirect 
+   Path: show.php, line 156 
+   Info: Unsanitized input from an HTTP parameter flows into header, where it is used as an URL to redirect the user. This may result in an Open Redirect vulnerability.
+
+ ✗ [Medium] Open Redirect 
+   Path: show.php, line 169 
+   Info: Unsanitized input from an HTTP parameter flows into header, where it is used as an URL to redirect the user. This may result in an Open Redirect vulnerability.
+
+ ✗ [Medium] Open Redirect 
+   Path: show.php, line 176 
+   Info: Unsanitized input from an HTTP parameter flows into header, where it is used as an URL to redirect the user. This may result in an Open Redirect vulnerability.
+
+ ✗ [Medium] Open Redirect 
+   Path: show.php, line 185 
+   Info: Unsanitized input from an HTTP parameter flows into header, where it is used as an URL to redirect the user. This may result in an Open Redirect vulnerability.
+
+ ✗ [Medium] Open Redirect 
+   Path: show.php, line 192 
+   Info: Unsanitized input from an HTTP parameter flows into header, where it is used as an URL to redirect the user. This may result in an Open Redirect vulnerability.
+
+ ✗ [Medium] Open Redirect 
+   Path: show.php, line 218 
+   Info: Unsanitized input from an HTTP parameter flows into header, where it is used as an URL to redirect the user. This may result in an Open Redirect vulnerability.
+
+ ✗ [Medium] Open Redirect 
+   Path: show.php, line 223 
+   Info: Unsanitized input from an HTTP parameter flows into header, where it is used as an URL to redirect the user. This may result in an Open Redirect vulnerability.
+
+ ✗ [Medium] Open Redirect 
+   Path: show.php, line 232 
+   Info: Unsanitized input from an HTTP parameter flows into header, where it is used as an URL to redirect the user. This may result in an Open Redirect vulnerability.
+
+ ✗ [Medium] Open Redirect 
+   Path: show.php, line 236 
+   Info: Unsanitized input from an HTTP parameter flows into header, where it is used as an URL to redirect the user. This may result in an Open Redirect vulnerability.
+
+ ✗ [Medium] Open Redirect 
+   Path: show.php, line 249 
+   Info: Unsanitized input from an HTTP parameter flows into header, where it is used as an URL to redirect the user. This may result in an Open Redirect vulnerability.
+
+ ✗ [Medium] Use of Hardcoded Credentials 
+   Path: includes/config.php, line 5 
+   Info: Do not hardcode passwords in code. Found a hardcoded password used in mysqli_connect.
+
+ ✗ [Medium] Use of Hardcoded Credentials 
+   Path: includes/config.php, line 8 
+   Info: Do not hardcode passwords in code. Found a hardcoded password used in mysqli_connect.
+
+ ✗ [Medium] Sensitive Cookie Without 'HttpOnly' Flag 
+   Path: logout.php, line 8 
+   Info: setcookie misses the HttpOnly attribute (it is false by default). Set it to true to protect the cookie from possible malicious code on client side.
+
+ ✗ [Medium] Use of Password Hash With Insufficient Computational Effort 
+   Path: avatar.php, line 5 
+   Info: MD5 hash (used in md5) is insecure. Consider changing it to a secure hashing algorithm.
+
+ ✗ [Medium] Use of Password Hash With Insufficient Computational Effort 
+   Path: register.php, line 47 
+   Info: SHA1 hash (used in sha1) is insecure. Consider changing it to a secure hashing algorithm.
+
+ ✗ [Medium] Use of Password Hash With Insufficient Computational Effort 
+   Path: login.php, line 25 
+   Info: SHA1 hash (used in sha1) is insecure. Consider changing it to a secure hashing algorithm.
+
+ ✗ [Medium] Use of Password Hash With Insufficient Computational Effort 
+   Path: page/changepasswd.php, line 24 
+   Info: SHA1 hash (used in sha1) is insecure. Consider changing it to a secure hashing algorithm.
+
+ ✗ [High] Server-Side Request Forgery (SSRF) 
+   Path: author/books/update.php, line 36 
+   Info: Unsanitized input from an HTTP parameter flows into unlink, where it is used as an URL to perform a request. This may result in a Server-Side Request Forgery vulnerability.
+
+ ✗ [High] File Inclusion 
+   Path: profile.php, line 48 
+   Info: Unsanitized input from an HTTP parameter flows into _, where it is included dynamically. Allowing unvalidated user input to control files that are included dynamically in PHP can lead to malicious code execution.
+
+ ✗ [High] File Inclusion 
+   Path: author/index.php, line 40 
+   Info: Unsanitized input from an HTTP parameter flows into _, where it is included dynamically. Allowing unvalidated user input to control files that are included dynamically in PHP can lead to malicious code execution.
+
+ ✗ [High] Path Traversal 
+   Path: author/books/update.php, line 36 
+   Info: Unsanitized input from an HTTP parameter flows into unlink, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to delete arbitrary files.
+
+ ✗ [High] Path Traversal 
+   Path: author/books/delete.php, line 36 
+   Info: Unsanitized input from an HTTP parameter flows into unlink, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to delete arbitrary files.
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: author/books/update.php, line 106 
+   Info: Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: author/books/update.php, line 131 
+   Info: Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: author/books/update.php, line 150 
+   Info: Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: show.php, line 264 
+   Info: Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: show.php, line 265 
+   Info: Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: show.php, line 289 
+   Info: Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: show.php, line 291 
+   Info: Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: show.php, line 294 
+   Info: Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: show.php, line 304 
+   Info: Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: show.php, line 347 
+   Info: Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: show.php, line 348 
+   Info: Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: author/show.php, line 75 
+   Info: Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] Cross-site Scripting (XSS) 
+   Path: search.php, line 34 
+   Info: Unsanitized input from an HTTP parameter flows into the echo statement, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+ ✗ [High] SQL Injection 
+   Path: author/books/update.php, line 30 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: author/books/update.php, line 43 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: author/books/update.php, line 63 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 21 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 32 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 41 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 52 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 63 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 73 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 83 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 94 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 106 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 118 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 130 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 142 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 146 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 153 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 166 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 173 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 182 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 189 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 203 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 215 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 229 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 246 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 316 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: show.php, line 366 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: author/books/delete.php, line 27 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: author/books/delete.php, line 33 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: author/show.php, line 17 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: author/show.php, line 41 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: author/show.php, line 66 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: search.php, line 21 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: search.php, line 43 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: register.php, line 40 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: register.php, line 49 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: login.php, line 27 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: author/books/publish.php, line 34 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: author/books/publish.php, line 39 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: author/books/publish.php, line 46 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: page/likedbooks.php, line 11 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: page/readlyst.php, line 11 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: author/page/desc.php, line 16 
+   Info: Unsanitized input from an HTTP parameter flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+ ✗ [High] SQL Injection 
+   Path: author/page/add.php, line 36 
+   Info: Unsanitized input from an uploaded file flows into mysqli_query, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+
+✔ Test completed
+
+Organization:      callmeks
+Test type:         Static code analysis
+Project path:      /home/ks/readlyst
+
+Summary:
+
+  83 Code issues found
+  62 [High]   21 [Medium] 
+

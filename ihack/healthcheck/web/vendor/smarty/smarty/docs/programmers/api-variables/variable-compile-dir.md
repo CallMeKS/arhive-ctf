@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8183022a58aef20d422a683ac2e28996930e324cbca92a920c2402129ae316a9
-size 988
+\$compile\_dir {#variable.compile.dir}
+==============
+
+This is the name of the directory where compiled templates are located.
+By default this is `./templates_c`, meaning that Smarty will look for
+the `templates_c/` directory in the same directory as the executing php
+script. **This directory must be writeable by the web server**, [see
+install](#installing.smarty.basic) for more info.
+
+> **Note**
+>
+> This setting must be either a relative or absolute path. include\_path
+> is not used for writing files.
+
+> **Note**
+>
+> It is not recommended to put this directory under the web server
+> document root.
+
+> **Note**
+>
+> As of Smarty 3.1 the attribute \$compile\_dir is no longer accessible
+> directly. Use [`getCompileDir()`](#api.get.compile.dir) and
+> [`setCompileDir()`](#api.set.compile.dir) instead.
+
+See also [`getCompileDir()`](#api.get.compile.dir),
+[`setCompileDir()`](#api.set.compile.dir),
+[`$compile_id`](#variable.compile.id) and
+[`$use_sub_dirs`](#variable.use.sub.dirs).

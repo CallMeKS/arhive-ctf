@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:95a501bee9329e404bc82d00a010953f1749dfa68084bc9c25035d8061f6adcf
-size 712
+<?php
+/**
+ * Smarty plugin
+ *
+ * @package    Smarty
+ * @subpackage PluginsModifier
+ */
+
+/**
+ * Smarty number_format modifier plugin
+ * Type:     modifier
+ * Name:     number_format
+ * Purpose:  Format a number with grouped thousands
+ *
+ * @param float|null  $num
+ * @param int         $decimals
+ * @param string|null $decimal_separator
+ * @param string|null $thousands_separator
+ *
+ * @return string
+ */
+function smarty_modifier_number_format(?float $num, int $decimals = 0, ?string $decimal_separator = ".", ?string $thousands_separator = ",")
+{
+    // provide $num default to prevent deprecation errors in PHP >=8.1
+    return number_format($num ?? 0.0, $decimals, $decimal_separator, $thousands_separator);
+}

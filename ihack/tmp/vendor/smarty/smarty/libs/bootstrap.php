@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ef5c054eaca161807bef8771e994c818f2cd7b2d6abe3a4c952aba3e00287a32
-size 407
+<?php
+/**
+ * This file is part of the Smarty package.
+ *
+ * (c) Sebastian Bergmann <sebastian@phpunit.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+/**
+ * Load and register Smarty Autoloader
+ */
+if (!class_exists('Smarty_Autoloader')) {
+    include __DIR__ . '/Autoloader.php';
+}
+Smarty_Autoloader::register(true);

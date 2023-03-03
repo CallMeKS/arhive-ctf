@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7f9f99c1e92345d43742eeb1ab11dbb9ae9fa9ee2d2f208a2175d0611551a2d5
-size 565
+<?php
+
+/**
+ * Smarty plugin
+ *
+ * @package    Smarty
+ * @subpackage PluginsModifierCompiler
+ */
+/**
+ * Smarty nl2br modifier plugin
+ * Type:     modifier
+ * Name:     nl2br
+ * Purpose:  insert HTML line breaks before all newlines in a string
+ *
+ * @link   https://www.smarty.net/docs/en/language.modifier.nl2br.tpl nl2br (Smarty online manual)
+  *
+ * @param array $params parameters
+ *
+ * @return string with compiled code
+ */
+function smarty_modifiercompiler_nl2br($params) {
+    return 'nl2br((string) ' . $params[0] . ', (bool) ' . ($params[1] ?? true) . ')';
+}

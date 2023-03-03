@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2c0493951686578a1de68f94e9f5230f1af9d18996c5f5c53568ddd340a71183
-size 702
+{
+  "name": "brainfoolong/cryptojs-aes-php",
+  "type": "library",
+  "description": "CryptoJS 3.x AES encryption/decryption on client side with Javascript and on server side with PHP",
+  "keywords": [
+    "aes",
+    "php",
+    "javascript",
+    "encryption"
+  ],
+  "homepage": "https://github.com/brainfoolong/cryptojs-aes-php",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Roland Eigelsreiter",
+      "homepage": "https://github.com/brainfoolong/cryptojs-aes-php",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Nullix\\CryptoJsAes\\": "src/"
+    }
+  },
+  "version": "2.1.1",
+  "require": {
+    "php": ">=7.0.0",
+    "ext-openssl": "*",
+    "ext-json": "*"
+  }
+}

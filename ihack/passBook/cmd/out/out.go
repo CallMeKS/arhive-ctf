@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ffdc6da54e902a4d104183331d01956322ce5838ee9c84db8044a76eb5cc52df
-size 416
+package out
+
+import (
+	"fmt"
+
+	"github.com/logrusorgru/aurora/v4"
+)
+
+func PrintError() {
+	fmt.Print("[")
+	fmt.Print(aurora.Red("ERR"))
+	fmt.Print("] ")
+}
+
+func PrintInfo() {
+	fmt.Print("[")
+	fmt.Print(aurora.Blue("INF"))
+	fmt.Print("] ")
+}
+
+func PrintSucceed() {
+	fmt.Print("[")
+	fmt.Print(aurora.Green("YAY"))
+	fmt.Print("] ")
+}
+
+func PrintFatal() {
+	fmt.Print("[")
+	fmt.Print(aurora.Red("FTL"))
+	fmt.Print("] ")
+}

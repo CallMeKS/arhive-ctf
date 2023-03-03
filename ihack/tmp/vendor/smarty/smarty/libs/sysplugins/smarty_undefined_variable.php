@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:83a7d86b2a5268c3915480cdec5a5cecfa2bbb02d5d6084b2e47acb51e3754eb
-size 567
+<?php
+
+/**
+ * class for undefined variable object
+ * This class defines an object for undefined variable handling
+ *
+ * @package    Smarty
+ * @subpackage Template
+ */
+class Smarty_Undefined_Variable extends Smarty_Variable
+{
+    /**
+     * Returns null for not existing properties
+     *
+     * @param string $name
+     *
+     * @return null
+     */
+    public function __get($name)
+    {
+        return null;
+    }
+
+    /**
+     * Always returns an empty string.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return '';
+    }
+}

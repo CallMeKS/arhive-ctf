@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b943956193990bbd9ce3af63e79b295e678bade81f68ff29e10af2dd1edd3193
-size 526
+\$cache\_modified\_check {#variable.cache.modified.check}
+========================
+
+If set to TRUE, Smarty will respect the If-Modified-Since header sent
+from the client. If the cached file timestamp has not changed since the
+last visit, then a `'304: Not Modified'` header will be sent instead of
+the content. This works only on cached content without
+[`{insert}`](#language.function.insert) tags.
+
+See also [`$caching`](#variable.caching),
+[`$cache_lifetime`](#variable.cache.lifetime), and the [caching
+section](#caching).

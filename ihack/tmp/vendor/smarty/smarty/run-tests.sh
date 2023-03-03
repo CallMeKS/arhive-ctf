@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8735bc1ccf4d90a3a49941ef7140a98b8ca4c90cf4f00e469aa027c006db7629
-size 312
+#!/bin/sh
+composer update
+
+php -r 'echo "\nPHP version " . phpversion() . ". ";';
+
+if [ -z $1 ];
+then
+  echo "Running all unit tests.\n"
+  php ./vendor/phpunit/phpunit/phpunit
+else
+  echo "Running all unit tests, except tests marked with @group $1.\n"
+  php ./vendor/phpunit/phpunit/phpunit --exclude-group $1
+fi

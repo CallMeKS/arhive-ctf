@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f48e3de8413afc2d583bb5e78317ad1e7416c01e0c0437fd9d5873d3e6cca9c4
-size 613
+<?php
+/**
+ * Smarty plugin
+ *
+ * @package    Smarty
+ * @subpackage PluginsModifierCompiler
+ */
+/**
+ * Smarty cat modifier plugin
+ * Type:     modifier
+ * Name:     cat
+ * Date:     Feb 24, 2003
+ * Purpose:  catenate a value to a variable
+ * Input:    string to catenate
+ * Example:  {$var|cat:"foo"}
+ *
+ * @link   https://www.smarty.net/manual/en/language.modifier.cat.php cat
+ *           (Smarty online manual)
+ * @author Uwe Tews
+ *
+ * @param array $params parameters
+ *
+ * @return string with compiled code
+ */
+function smarty_modifiercompiler_cat($params)
+{
+    return '(' . implode(').(', $params) . ')';
+}

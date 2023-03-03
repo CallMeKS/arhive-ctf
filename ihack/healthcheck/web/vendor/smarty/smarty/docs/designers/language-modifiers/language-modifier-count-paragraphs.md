@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fa3622a6bb464a700a1bdc3c98d3c6b6b532b1267757308f31ffc598989490ec
-size 844
+count\_paragraphs {#language.modifier.count.paragraphs}
+=================
+
+This is used to count the number of paragraphs in a variable.
+
+
+    <?php
+
+    $smarty->assign('articleTitle',
+                     "War Dims Hope for Peace. Child's Death Ruins Couple's Holiday.\n\n
+                     Man is Fatally Slain. Death Causes Loneliness, Feeling of Isolation."
+                    );
+
+    ?>
+
+       
+
+Where template is:
+
+
+    {$articleTitle}
+    {$articleTitle|count_paragraphs}
+
+       
+
+Will output:
+
+
+    War Dims Hope for Peace. Child's Death Ruins Couple's Holiday.
+
+    Man is Fatally Slain. Death Causes Loneliness, Feeling of Isolation.
+    2
+
+       
+
+See also [`count_characters`](#language.modifier.count.characters),
+[`count_sentences`](#language.modifier.count.sentences) and
+[`count_words`](#language.modifier.count.words).

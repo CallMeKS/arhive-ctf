@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:854f7c5db0a638af980761a621b2dbb71e0f9091af214782a695441585d3ae1f
-size 1743
+# Nmap 7.93 scan initiated Wed Jan  4 15:40:30 2023 as: nmap -vvv -p 21,22,80 -A -oA 192.168.22.100 192.168.22.100
+Nmap scan report for 192.168.22.100
+Host is up, received syn-ack (0.017s latency).
+Scanned at 2023-01-04 15:40:44 +08 for 42s
+
+PORT   STATE SERVICE REASON  VERSION
+21/tcp open  ftp     syn-ack vsftpd 2.0.8 or later
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_Can't get directory listing: TIMEOUT
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:192.168.22.2
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.5 - secure, fast, stable
+|_End of status
+22/tcp open  ssh     syn-ack OpenSSH 8.9p1 Ubuntu 3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 c4904a5f2b7559a122e55ecc2b39f9de (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNBZYhusmlZ5TSSOJprsAA/jH3xd1F8mYbn0hkjO3ApP6JuIJTpNucaG2Mbw6y/VA7X4ZSssk4tGFz+qoMiftUo=
+|   256 19a45c1a0f3e85b29bc74cb72c361470 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEsyH3Gf9Z/dxdTEUHSz1LndywthUBJuht3XhHQNBOHj
+80/tcp open  http    syn-ack Apache httpd 2.4.54 ((Ubuntu))
+|_http-title: Jurrasic Park
+| http-methods: 
+|_  Supported Methods: GET POST OPTIONS HEAD
+|_http-server-header: Apache/2.4.54 (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Jan  4 15:41:26 2023 -- 1 IP address (1 host up) scanned in 56.10 seconds
